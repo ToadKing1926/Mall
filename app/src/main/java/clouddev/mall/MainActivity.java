@@ -1,17 +1,24 @@
 package clouddev.mall;
 
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
-import clouddev.com.czy.app.appInit;
 
-public class MainActivity extends AppCompatActivity {
+import clouddev.com.czy.activity.FragmentVectorActivity;
+import clouddev.com.czy.app.appInit;
+import clouddev.com.czy.fragment.CoreFragment;
+
+public class MainActivity extends FragmentVectorActivity {
+
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
+    public CoreFragment setRootFragment()
     {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toast.makeText(appInit.getApplication(),"闷声大发财",Toast.LENGTH_LONG).show();
+
+        return new ExampleFragment();
     }
 }

@@ -19,9 +19,14 @@ public final class appInit
         return appConfig.getInstance();
     }
 
-    private static HashMap<String,Object> getConfigurations()
+    public static HashMap<String,Object> getConfigurations()
     {
         return appConfig.getInstance().getAppConfigration();
+    }
+
+    public static <T> T getConfiguration(Enum<ConfigType> key)
+    {
+        return appConfig.getInstance().getConfiguration(key);
     }
 
     public static Context getApplication()
