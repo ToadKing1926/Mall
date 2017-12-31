@@ -8,11 +8,16 @@ import android.util.Log;
 
 import clouddev.com.czy.R;
 import clouddev.com.czy.fragment.CoreFragment;
+<<<<<<< HEAD
 import me.yokeyword.fragmentation.BuildConfig;
 import me.yokeyword.fragmentation.Fragmentation;
 import me.yokeyword.fragmentation.SupportActivity;
 
 
+=======
+import me.yokeyword.fragmentation.SupportActivity;
+
+>>>>>>> origin/master
 /**
  * Created by 29737 on 2017/12/23.
  */
