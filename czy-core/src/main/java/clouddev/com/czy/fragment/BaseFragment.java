@@ -11,6 +11,7 @@ import java.util.zip.Inflater;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import clouddev.com.czy.activity.FragmentVectorActivity;
 import me.yokeyword.fragmentation_swipeback.SwipeBackFragment;
 
 /**
@@ -44,6 +45,11 @@ public abstract class BaseFragment extends SwipeBackFragment
                onBindView(savedInstanceState,rootView);
         }
         return rootView;
+    }
+
+    public final FragmentVectorActivity getFVActivity()
+    {
+        return (FragmentVectorActivity)_mActivity;
     }
 
     @Override
