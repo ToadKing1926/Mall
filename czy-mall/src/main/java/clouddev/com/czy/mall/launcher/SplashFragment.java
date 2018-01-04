@@ -1,5 +1,6 @@
 package clouddev.com.czy.mall.launcher;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatTextView;
@@ -11,11 +12,14 @@ import java.util.Timer;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import clouddev.com.czy.app.AccountManager;
+import clouddev.com.czy.app.iUserCheck;
 import clouddev.com.czy.fragment.CoreFragment;
 import clouddev.com.czy.mall.R;
 import clouddev.com.czy.mall.R2;
 import clouddev.com.czy.storage.appPreference;
 import clouddev.com.czy.ui.ScrollLauncherTag;
+import clouddev.com.czy.ui.iLauncherListener;
 import clouddev.com.czy.util.timer.BaseTimerTask;
 import clouddev.com.czy.util.timer.iTimerListener;
 
@@ -29,7 +33,9 @@ public class SplashFragment extends CoreFragment implements iTimerListener
     AppCompatTextView appCompatTextView = null;
 
     private Timer timer = null;
+    //启动页面倒计时秒数
     private int mCount = 5;
+    private iLauncherListener mILauncherListener = null;
 
     @OnClick(R2.id.tv_launcher_timer)
     void onClick()
@@ -39,6 +45,16 @@ public class SplashFragment extends CoreFragment implements iTimerListener
             timer.cancel();
             timer = null;
             checkIsShow();
+        }
+    }
+
+    @Override
+    public void onAttach(Activity activity)
+    {
+        super.onAttach(activity);
+        if(activity instanceof iLauncherListener)
+        {
+            mILauncherListener = (iLauncherListener)activity;
         }
     }
 
@@ -65,11 +81,30 @@ public class SplashFragment extends CoreFragment implements iTimerListener
     {
         if(!appPreference.getAppFlag(ScrollLauncherTag.FIRST_LAUNCHER_APP.name()))
         {
-            start(new SplashScrollFragment(),SINGLETASK);
+            startWithPop(new SplashScrollFragment());
         }
         else
         {
-            //TODO:check if user has login
+            AccountManager.checkAccount(new iUserCheck()
+            {
+                @Override
+                public void onSignin()
+                {
+                    if(mILauncherListener != null)
+                    {
+                        mILauncherListener.onLauncherFinish(true);
+                    }
+                }
+
+                @Override
+                public void onSignOut()
+                {
+                    if(mILauncherListener != null)
+                    {
+                        mILauncherListener.onLauncherFinish(false);
+                    }
+                }
+            });
         }
     }
 

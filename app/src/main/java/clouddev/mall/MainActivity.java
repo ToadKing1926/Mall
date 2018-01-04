@@ -8,13 +8,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.litepal.LitePal;
+
 import clouddev.com.czy.activity.FragmentVectorActivity;
+import clouddev.com.czy.app.AccountManager;
 import clouddev.com.czy.app.appInit;
 import clouddev.com.czy.fragment.CoreFragment;
 import clouddev.com.czy.mall.launcher.SplashFragment;
 import clouddev.com.czy.mall.launcher.SplashScrollFragment;
+import clouddev.com.czy.mall.sign.SignInFragment;
+import clouddev.com.czy.mall.sign.SignUpFragment;
+import clouddev.com.czy.mall.sign.iSignListener;
+import clouddev.com.czy.ui.iLauncherListener;
 
-public class MainActivity extends FragmentVectorActivity {
+public class MainActivity extends FragmentVectorActivity implements iSignListener,iLauncherListener {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
@@ -25,6 +32,7 @@ public class MainActivity extends FragmentVectorActivity {
         {
             actionBar.hide();
         }
+        LitePal.getDatabase();
     }
 
     @Override
@@ -32,5 +40,33 @@ public class MainActivity extends FragmentVectorActivity {
     {
 
         return new SplashFragment();
+    }
+
+    @Override
+    public void onLauncherFinish(boolean isFinish)
+    {
+        if(isFinish)
+        {
+            startWithPop(new ExampleFragment());
+        }
+        else
+        {
+            startWithPop(new SignInFragment());
+        }
+    }
+
+    @Override
+    public void onSignInSuccess()
+    {
+        Toast.makeText(this,"sign in",Toast.LENGTH_LONG).show();
+        AccountManager.setSignState(true);
+        startWithPop(new ExampleFragment());
+    }
+
+    @Override
+    public void onSignUpSuccess()
+    {
+        AccountManager.setSignState(true);
+        startWithPop(new ExampleFragment());
     }
 }
