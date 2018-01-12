@@ -2,6 +2,7 @@ package clouddev.com.czy.app;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Handler;
 import android.util.Log;
 
 import java.util.HashMap;
@@ -32,5 +33,10 @@ public final class appInit
     public static Context getApplication()
     {
         return (Context)getConfigurations().get(ConfigType.APPLICATION_CONTEXT.name());
+    }
+
+    public static Handler getHandler()
+    {
+        return getConfiguration(ConfigType.HANDLER);
     }
 }

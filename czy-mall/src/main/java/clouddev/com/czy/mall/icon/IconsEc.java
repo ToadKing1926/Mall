@@ -8,8 +8,8 @@ import com.joanzapata.iconify.Icon;
 
 public enum IconsEc implements Icon
 {
-    fo_scan('\ue61e'),
-    fo_alipay('\ue634')
+    icon_scan('\ue61e'),
+    icon_alipay('\ue634')
     ;
     private char character;
 
@@ -20,11 +20,11 @@ public enum IconsEc implements Icon
 
     @Override
     public String key() {
-        return null;
+        return name().replace("_","-");
     }
 
     @Override
     public char character() {
-        return 0;
+        return character;
     }
 }

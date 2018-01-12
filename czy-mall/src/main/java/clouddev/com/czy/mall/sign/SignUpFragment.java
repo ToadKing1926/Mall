@@ -168,7 +168,8 @@ public class SignUpFragment extends CoreFragment
     }
 
     @Override
-    public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
+    public void onBindView(@Nullable Bundle savedInstanceState, View rootView)
+    {
 
     }
 

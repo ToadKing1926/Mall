@@ -1,1 +1,1 @@
-include ':app', ':czy-annotations', ':czy-complier', ':czy-core', ':czy-mall'
+include ':app', ':czy-core', ':czy-mall'

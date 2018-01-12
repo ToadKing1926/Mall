@@ -18,6 +18,6 @@ public class FontEc implements IconFontDescriptor
     @Override
     public Icon[] characters()
     {
-        return new Icon[0];
+        return IconsEc.values();
     }
 }

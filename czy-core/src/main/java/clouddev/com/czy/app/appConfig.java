@@ -1,5 +1,7 @@
 package clouddev.com.czy.app;
 
+import android.os.Handler;
+
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
 
@@ -20,9 +22,12 @@ public class appConfig
     //拦截器相关
     private static final ArrayList<Interceptor> INTERCEPTORS = new ArrayList<>();
 
+    private static final Handler HANDLER = new Handler();
+
     private appConfig()
     {
         APP_CONFIGRATION.put(ConfigType.CONFIG_READY.name(),false);
+        APP_CONFIGRATION.put(ConfigType.HANDLER.name(), HANDLER);
     }
 
     private static class Holder
