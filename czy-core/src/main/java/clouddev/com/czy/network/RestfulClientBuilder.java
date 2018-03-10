@@ -49,7 +49,7 @@ public class RestfulClientBuilder
 
     public final RestfulClientBuilder params(Map<String,Object> params)
     {
-        this.mParams=params;
+        this.mParams = params;
         return this;
     }
 
@@ -57,7 +57,7 @@ public class RestfulClientBuilder
     {
         if(mParams==null)
         {
-            mParams=new WeakHashMap<>();
+            mParams = new WeakHashMap<>();
         }
         mParams.put(key,value);
         return this;

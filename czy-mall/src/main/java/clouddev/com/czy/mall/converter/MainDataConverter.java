@@ -1,11 +1,12 @@
 package clouddev.com.czy.mall.converter;
 
-import com.google.gson.Gson;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import clouddev.com.czy.mall.bean.MainPageJson;
+;
 import clouddev.com.czy.ui.recycler.DataConverter;
 import clouddev.com.czy.ui.recycler.ItemType;
 import clouddev.com.czy.ui.recycler.MultipleFields;
@@ -17,23 +18,19 @@ import clouddev.com.czy.ui.recycler.MultipleItemEntity;
 
 public class MainDataConverter extends DataConverter
 {
-    private final Gson gson =new Gson();
-
     @Override
     public ArrayList<MultipleItemEntity> convert()
     {
-        final String jsonData = getJsonData();
-        final MainPageJson mainPageJson = gson.fromJson(jsonData,MainPageJson.class);
-        final ArrayList<MainPageJson.MainPageData> data = mainPageJson.getData();
-        final int size = data.size();
+        final JSONArray dataArray = JSON.parseObject(getJsonData()).getJSONArray("data");
+        final int size = dataArray.size();
         for(int i=0;i<size;i++)
         {
-            final MainPageJson.MainPageData mainPageData = data.get(i);
-            final String imageUrl = mainPageData.getImageUrl();
-            final int spanSize = mainPageData.getSpanSize();
-            final String text = mainPageData.getText();
-            final int id = mainPageData.getGoodsId();
-            final ArrayList<String> banners = mainPageData.getBanners();
+            final JSONObject data = dataArray.getJSONObject(i);
+            final String imageUrl = data.getString("imageUrl");
+            final int spanSize = data.getInteger("spanSize");
+            final String text = data.getString("text");
+            final int id = data.getInteger("goodsId");
+            final JSONArray banners = data.getJSONArray("banners");
             final ArrayList<String> bannerImages = new ArrayList<>();
             int type = 0;
             if(imageUrl == null && text != null)
@@ -52,9 +49,9 @@ public class MainDataConverter extends DataConverter
             {
                 type = ItemType.BANNER;
                 final int bannerSize = banners.size();
-                for(int j=0;j<size;j++)
+                for(int j=0;j<bannerSize;j++)
                 {
-                    final String banner = banners.get(j);
+                    final String banner = banners.getString(j);
                     bannerImages.add(banner);
                 }
             }

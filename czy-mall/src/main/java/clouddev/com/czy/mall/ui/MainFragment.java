@@ -1,20 +1,33 @@
 package clouddev.com.czy.mall.ui;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.AppCompatEditText;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+
 import com.joanzapata.iconify.widget.IconTextView;
+
 
 import butterknife.BindView;
 import clouddev.com.czy.fragment.CoreFragment;
 import clouddev.com.czy.mall.R;
 import clouddev.com.czy.mall.R2;
-import clouddev.com.czy.ui.RefreshHandler;
+import clouddev.com.czy.mall.converter.MainDataConverter;
+import clouddev.com.czy.network.RestfulClient;
+import clouddev.com.czy.network.callback.iFailure;
+import clouddev.com.czy.network.callback.iSuccess;
+import clouddev.com.czy.ui.recycler.BaseDivider;
+import clouddev.com.czy.ui.refresh.RefreshHandler;
+import clouddev.com.czy.ui.recycler.MultipleFields;
+import clouddev.com.czy.ui.recycler.MultipleItemEntity;
+import clouddev.mall.ExampleFragment;
 
 /**
  * Created by 29737 on 2018/1/8.
@@ -24,7 +37,7 @@ public class MainFragment extends CoreFragment
 {
     @BindView(R2.id.swipe_refresh)
     SwipeRefreshLayout swipeRefreshLayout =null;
-    @BindView(R2.id.main_recyvler_view)
+    @BindView(R2.id.main_recycler_view)
     RecyclerView recyclerView = null;
     @BindView(R2.id.main_tool_bar)
     Toolbar toolbar = null;
@@ -43,11 +56,23 @@ public class MainFragment extends CoreFragment
         swipeRefreshLayout.setProgressViewOffset(true,120,300);
     }
 
+    private void initRecyclerView()
+    {
+        final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),4);
+        final ExampleFragment exampleFragment = getParentfragment();
+
+        recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView.addItemDecoration(BaseDivider.create(Color.GRAY,3));
+        recyclerView.addOnItemTouchListener(MainItemClickListener.create(exampleFragment));
+    }
+
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState)
     {
         super.onLazyInitView(savedInstanceState);
         initRefresh();
+        initRecyclerView();
+        refreshHandler.firstPage("/index");
     }
 
     @Override
@@ -59,6 +84,7 @@ public class MainFragment extends CoreFragment
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView)
     {
-         refreshHandler = new RefreshHandler(swipeRefreshLayout);
+         refreshHandler = RefreshHandler.create(swipeRefreshLayout,recyclerView,new MainDataConverter());
+
     }
 }

@@ -6,5 +6,9 @@ package clouddev.com.czy.fragment;
 
 public abstract class CoreFragment extends PermissionCheckFragment
 {
-
+    @SuppressWarnings("unchecked")
+     public <T extends CoreFragment> T getParentfragment()
+     {
+         return (T)getParentFragment();
+     }
 }

@@ -1,7 +1,6 @@
 package clouddev.mall;
 
 import android.app.Application;
-import android.util.Log;
 
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 
@@ -26,11 +25,11 @@ public class MallApp extends Application
                 .setApiHost("http://127.0.0.1/")
                 .setICON(new FontEc())
                 .setICON(new FontAwesomeModule())
-                .setIntercepter(new DebugInterceptor("index",R.raw.test))
-                .setIntercepter(new DebugInterceptor("sign_up",R.raw.test))
-                .setIntercepter(new DebugInterceptor("sign_in",R.raw.test))
+                .setIntercepter(new DebugInterceptor("index",R.raw.mainpage))
+                .setIntercepter(new DebugInterceptor("sign_up",R.raw.mainpage))
+                .setIntercepter(new DebugInterceptor("sign_in",R.raw.mainpage))
                 .configure();
 
-
     }
+
 }

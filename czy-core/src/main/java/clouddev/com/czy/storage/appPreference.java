@@ -3,9 +3,7 @@ package clouddev.com.czy.storage;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import com.google.gson.Gson;
-
-import org.json.JSONObject;
+import com.alibaba.fastjson.JSONObject;
 
 import clouddev.com.czy.app.appInit;
 

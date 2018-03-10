@@ -2,35 +2,19 @@ package clouddev.mall;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.Toast;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
-import com.google.gson.Gson;
-
-import java.util.ArrayList;
-import java.util.WeakHashMap;
 
 import butterknife.BindView;
-import clouddev.com.czy.mall.bean.MainPageJson;
-import clouddev.com.czy.ui.recycler.ItemType;
-import clouddev.com.czy.ui.recycler.MultipleFields;
-import clouddev.com.czy.ui.recycler.MultipleItemEntity;
-import clouddev.mall.R2;
 import clouddev.com.czy.fragment.CoreFragment;
+import clouddev.com.czy.mall.R;
+import clouddev.com.czy.mall.R2;
 import clouddev.com.czy.mall.ui.CartFragment;
 import clouddev.com.czy.mall.ui.DiscoverFragment;
 import clouddev.com.czy.mall.ui.MainFragment;
 import clouddev.com.czy.mall.ui.MineFragment;
-import clouddev.com.czy.network.RestfulClient;
-import clouddev.com.czy.network.callback.iError;
-import clouddev.com.czy.network.callback.iFailure;
-import clouddev.com.czy.network.callback.iSuccess;
-import clouddev.com.czy.ui.LoaderStyle;
 import me.yokeyword.fragmentation.SupportFragment;
 
 /**
@@ -53,14 +37,13 @@ public class ExampleFragment extends CoreFragment implements BottomNavigationBar
     @Override
     public Object setLayout()
     {
-        return R.layout.fragment_example;
+        return R.layout.example_fragment;
     }
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView)
     {
         initView();
-        TestRestfulClient();
     }
 
     @Override
@@ -68,7 +51,6 @@ public class ExampleFragment extends CoreFragment implements BottomNavigationBar
     {
         super.onActivityCreated(savedInstanceState);
         init();
-
     }
 
 
@@ -76,46 +58,6 @@ public class ExampleFragment extends CoreFragment implements BottomNavigationBar
     private void TestRestfulClient()
     {
 
-        RestfulClient.builder()
-                     .url("http://127.0.0.1/index")
-                     .params("","")
-                     .loader(getContext(), LoaderStyle.BallGridBeatIndicator)
-                     .success(new iSuccess() {
-                         @Override
-                         public void onSuccess(String Response)
-                         {
-                                 Gson gson = new Gson();
-                                 final String jsonData = Response;
-                                 final MainPageJson mainPageJson = gson.fromJson(jsonData,MainPageJson.class);
-                                 final ArrayList<MainPageJson.MainPageData> data = mainPageJson.getData();
-                                 final int size = data.size();
-
-                                     final MainPageJson.MainPageData mainPageData = data.get(0);
-                                     final String imageUrl = mainPageData.getImageUrl();
-                                     final int spanSize = mainPageData.getSpanSize();
-                                     final String text = mainPageData.getText();
-                                     final int id = mainPageData.getGoodsId();
-                                     final ArrayList<String> banners = mainPageData.getBanners();
-                                     final ArrayList<String> bannerImages = new ArrayList<>();
-                                     Log.d("Hola",imageUrl+spanSize+text+id+banners.get(0));
-
-                             }
-                     })
-                     .error(new iError() {
-                         @Override
-                         public void onError(int code, String msg)
-                         {
-                             Toast.makeText(getContext(),code,Toast.LENGTH_LONG).show();
-                         }
-                     })
-                     .failure(new iFailure() {
-                         @Override
-                         public void onFaliure() {
-                             Toast.makeText(getContext(),"Fail!",Toast.LENGTH_LONG).show();
-                         }
-                     })
-                     .build()
-                     .get();
     }
 
    private void init()

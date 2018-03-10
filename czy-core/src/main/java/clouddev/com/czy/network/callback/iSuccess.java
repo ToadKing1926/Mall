@@ -6,5 +6,5 @@ package clouddev.com.czy.network.callback;
 
 public interface iSuccess
 {
-    void onSuccess(String Response);
+    void onSuccess(String response);
 }

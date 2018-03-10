@@ -7,9 +7,9 @@ package clouddev.com.czy.ui.recycler;
 
 public class ItemType
 {
-    public static int TEXT  = 1;//纯文字
-    public static int IMAGE = 2;//纯图片
-    public static int IMAGE_TEXT = 3;//图文并茂
-    public static int BANNER = 4;//广告轮播
+    public static final int TEXT  = 1;//纯文字
+    public static final int IMAGE = 2;//纯图片
+    public static final int IMAGE_TEXT = 3;//图文并茂
+    public static final int BANNER = 4;//广告轮播
 
 }

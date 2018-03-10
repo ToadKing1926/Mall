@@ -20,7 +20,7 @@ import clouddev.com.czy.fragment.CoreFragment;
 import clouddev.com.czy.mall.R;
 import clouddev.com.czy.mall.R2;
 import clouddev.com.czy.mall.sign.SignInFragment;
-import clouddev.com.czy.mall.util.GlideImageLoader;
+import clouddev.com.czy.util.GlideImageLoader;
 import clouddev.com.czy.storage.appPreference;
 import clouddev.com.czy.ui.ScrollLauncherTag;
 import clouddev.com.czy.ui.iLauncherListener;
