@@ -31,7 +31,7 @@ public class MultipleRecyclerViewAdapter extends BaseMultiItemQuickAdapter<Multi
     //Banner只初始化一次
     private boolean mIsInitBanner = false;
 
-    private MultipleRecyclerViewAdapter(List<MultipleItemEntity> data)
+    protected MultipleRecyclerViewAdapter(List<MultipleItemEntity> data)
     {
         super(data);
         init();

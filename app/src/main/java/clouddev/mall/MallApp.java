@@ -28,6 +28,9 @@ public class MallApp extends Application
                 .setIntercepter(new DebugInterceptor("index",R.raw.mainpage))
                 .setIntercepter(new DebugInterceptor("sign_up",R.raw.mainpage))
                 .setIntercepter(new DebugInterceptor("sign_in",R.raw.mainpage))
+                .setIntercepter(new DebugInterceptor("sort_list",R.raw.sort))
+                .setIntercepter(new DebugInterceptor("sort_content",R.raw.sort_content))
+                .setJSInterface("czy")
                 .configure();
 
     }

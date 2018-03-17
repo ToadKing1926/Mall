@@ -11,10 +11,11 @@ import butterknife.BindView;
 import clouddev.com.czy.fragment.CoreFragment;
 import clouddev.com.czy.mall.R;
 import clouddev.com.czy.mall.R2;
-import clouddev.com.czy.mall.ui.CartFragment;
-import clouddev.com.czy.mall.ui.DiscoverFragment;
-import clouddev.com.czy.mall.ui.MainFragment;
+import clouddev.com.czy.mall.ui.cart.CartFragment;
+import clouddev.com.czy.mall.ui.discover.DiscoverFragment;
+import clouddev.com.czy.mall.ui.main.MainFragment;
 import clouddev.com.czy.mall.ui.MineFragment;
+import clouddev.com.czy.mall.ui.sort.SortFragment;
 import me.yokeyword.fragmentation.SupportFragment;
 
 /**
@@ -30,8 +31,9 @@ public class ExampleFragment extends CoreFragment implements BottomNavigationBar
     public static final int SECOND = 1;
     public static final int THIRD = 2;
     public static final int FOURTH = 3;
+    public static final int FIFTH = 4;
 
-    private SupportFragment[] mFragments = new SupportFragment[4];
+    private SupportFragment[] mFragments = new SupportFragment[5];
     private int currentPosition = 0;
 
     @Override
@@ -66,23 +68,26 @@ public class ExampleFragment extends CoreFragment implements BottomNavigationBar
        if (firstFragment == null)
        {
            mFragments[FIRST] = new MainFragment();
-           mFragments[SECOND] = new DiscoverFragment();
-           mFragments[THIRD] = new CartFragment();
-           mFragments[FOURTH] = new MineFragment();
+           mFragments[SECOND] = new SortFragment();
+           mFragments[THIRD] = new DiscoverFragment();
+           mFragments[FOURTH] = new CartFragment();
+           mFragments[FIFTH] = new MineFragment();
 
            loadMultipleRootFragment(R.id.fragment_container, FIRST,
                    mFragments[FIRST],
                    mFragments[SECOND],
                    mFragments[THIRD],
-                   mFragments[FOURTH]);
+                   mFragments[FOURTH],
+                   mFragments[FIFTH] );
        } else
            {
            // 这里库已经做了Fragment恢复,所有不需要额外的处理了, 不会出现重叠问题
            // 这里我们需要拿到mFragments的引用
            mFragments[FIRST] = firstFragment;
-           mFragments[SECOND] = findChildFragment(DiscoverFragment.class);
-           mFragments[THIRD] =  findChildFragment(CartFragment.class);
-           mFragments[FOURTH] = findChildFragment(MineFragment.class);
+           mFragments[SECOND] = findChildFragment(SortFragment.class);
+           mFragments[THIRD] =  findChildFragment(DiscoverFragment.class);
+           mFragments[FOURTH] = findChildFragment(CartFragment.class);
+           mFragments[FIFTH] = findChildFragment(MineFragment.class);
        }
    }
 
@@ -90,6 +95,7 @@ public class ExampleFragment extends CoreFragment implements BottomNavigationBar
    {
            bottomNavigationBar
                    .addItem(new BottomNavigationItem(R.drawable.ic_home_black_24dp,"首页"))
+                   .addItem(new BottomNavigationItem(R.drawable.ic_sort_black_24dp,"分类"))
                    .addItem(new BottomNavigationItem(R.drawable.ic_search_black_24dp,"发现"))
                    .addItem(new BottomNavigationItem(R.drawable.ic_add_shopping_cart_black_24dp,"购物车"))
                    .addItem(new BottomNavigationItem(R.drawable.ic_account_circle_black_24dp,"我的"))

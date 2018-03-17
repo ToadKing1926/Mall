@@ -1,6 +1,7 @@
 package clouddev.com.czy.app;
 
 import android.os.Handler;
+import android.support.annotation.NonNull;
 
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
@@ -8,6 +9,8 @@ import com.joanzapata.iconify.Iconify;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import clouddev.com.czy.fragment.web.event.Event;
+import clouddev.com.czy.fragment.web.event.EventManager;
 import okhttp3.Interceptor;
 
 
@@ -49,6 +52,19 @@ public class appConfig
     public final appConfig setApiHost(String host)
     {
         APP_CONFIGRATION.put(ConfigType.API_HOST.name(),host);
+        return this;
+    }
+
+    public final appConfig setJSInterface(@NonNull String name)
+    {
+        APP_CONFIGRATION.put(ConfigType.JAVASCEIPT_INTERFACE.name(),name);
+        return this;
+    }
+
+    public final appConfig setWebEvent(@NonNull String name,@NonNull Event event)
+    {
+        final EventManager eventManager = EventManager.getInstance();
+        eventManager.addEvent(name,event);
         return this;
     }
 

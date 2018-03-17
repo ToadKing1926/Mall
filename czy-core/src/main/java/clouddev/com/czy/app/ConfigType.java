@@ -11,5 +11,6 @@ public enum ConfigType
     CONFIG_READY,
     ICON,
     INTERCEPTER,
-    HANDLER
+    HANDLER,
+    JAVASCEIPT_INTERFACE,
 }
