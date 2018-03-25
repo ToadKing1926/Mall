@@ -33,4 +33,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     api project(':czy-core')
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    
 }

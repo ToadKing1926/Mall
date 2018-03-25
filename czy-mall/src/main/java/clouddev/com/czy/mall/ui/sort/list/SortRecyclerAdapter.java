@@ -2,8 +2,8 @@ package clouddev.com.czy.mall.ui.sort.list;
 
 import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -42,7 +42,7 @@ public class SortRecyclerAdapter extends MultipleRecyclerViewAdapter
             case ItemType.SORT_MENU:
                 final String text = entity.getField(MultipleFields.TEXT);
                 final boolean isClicked = entity.getField(MultipleFields.TAG);
-                final AppCompatTextView name = holder.getView(R.id.vertical_item_name);
+                final TextView name = holder.getView(R.id.vertical_item_name);
                 final View line = holder.getView(R.id.view_line);
                 final View itemView = holder.itemView;
                 itemView.setOnClickListener(new View.OnClickListener()
