@@ -24,7 +24,7 @@ import clouddev.com.czy.util.timer.BaseTimerTask;
 import clouddev.com.czy.util.timer.iTimerListener;
 
 /**
- * Created by 29737 on 2018/1/1.
+ * Created by 29737
  */
 
 public class SplashFragment extends CoreFragment implements iTimerListener

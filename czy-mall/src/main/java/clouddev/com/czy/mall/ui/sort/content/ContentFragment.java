@@ -18,7 +18,7 @@ import clouddev.com.czy.network.RestfulClient;
 import clouddev.com.czy.network.callback.iSuccess;
 
 /**
- * Created by 29737 on 2018/3/10.
+ * Created by 29737
  */
 
 public class ContentFragment extends CoreFragment

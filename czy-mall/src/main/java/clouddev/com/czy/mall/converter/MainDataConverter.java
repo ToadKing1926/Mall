@@ -13,7 +13,7 @@ import clouddev.com.czy.ui.recycler.MultipleFields;
 import clouddev.com.czy.ui.recycler.MultipleItemEntity;
 
 /**
- * Created by 29737 on 2018/1/11.
+ * Created by 29737
  */
 
 public class MainDataConverter extends DataConverter

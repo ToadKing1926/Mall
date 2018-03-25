@@ -3,7 +3,7 @@ package clouddev.com.czy.ui.recycler;
 import java.util.ArrayList;
 
 /**
- * Created by 29737 on 2018/1/11.
+ * Created by 29737
  */
 
 public abstract class DataConverter

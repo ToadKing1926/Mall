@@ -28,7 +28,7 @@ import clouddev.com.czy.ui.iLauncherListener;
 
 
 /**
- * Created by 29737 on 2018/1/1.
+ * Created by 29737
  */
 
 public class SplashScrollFragment extends CoreFragment implements OnBannerListener

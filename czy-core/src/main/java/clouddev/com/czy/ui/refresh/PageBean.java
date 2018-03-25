@@ -1,7 +1,7 @@
 package clouddev.com.czy.ui.refresh;
 
 /**
- * Created by 29737 on 2018/3/6.
+ * Created by 29737
  */
 
 public final class PageBean

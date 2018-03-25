@@ -14,7 +14,7 @@ import clouddev.com.czy.R;
 import clouddev.com.czy.util.DiemnUtil;
 
 /**
- * Created by 29737 on 2017/12/26.
+ * Created by 29737
  */
 
 public class czyLoader

@@ -14,7 +14,7 @@ import clouddev.com.czy.ui.recycler.MultipleFields;
 import clouddev.com.czy.ui.recycler.MultipleItemEntity;
 
 /**
- * Created by 29737 on 2018/3/10.
+ * Created by 29737
  */
 
 public class SortVerticalDataConverter extends DataConverter

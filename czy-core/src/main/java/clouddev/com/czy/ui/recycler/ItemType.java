@@ -1,7 +1,7 @@
 package clouddev.com.czy.ui.recycler;
 
 /**
- * Created by 29737 on 2018/1/12.
+ * Created by 29737
  * 描述布局类型
  */
 

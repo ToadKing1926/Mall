@@ -13,7 +13,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 /**
- * Created by 29737 on 2017/12/24.
+ * Created by 29737
  */
 
 public class RestfulCreater
@@ -22,7 +22,7 @@ public class RestfulCreater
     {
         private static final String BASE_URL= appInit.getConfiguration(ConfigType.API_HOST);
         private static final Retrofit RETROFIT_CLIENT=new Retrofit.Builder()
-                                                                        .baseUrl(BASE_URL)
+                                                                         .baseUrl(BASE_URL)
                                                                         .client(OkHttpHolder.OKHTTP_CLIENT)
                                                                         .addConverterFactory(ScalarsConverterFactory.create())
                                                                         .build();

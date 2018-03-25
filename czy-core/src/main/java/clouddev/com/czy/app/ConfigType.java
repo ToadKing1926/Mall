@@ -1,7 +1,7 @@
 package clouddev.com.czy.app;
 
 /**
- * Created by 29737 on 2017/12/21.
+ * Created by 29737
  */
 
 public enum ConfigType

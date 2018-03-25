@@ -10,7 +10,7 @@ import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
 /**
- * Created by 29737 on 2018/3/9.
+ * Created by 29737
  */
 
 public class ProductDetailFragment extends CoreFragment

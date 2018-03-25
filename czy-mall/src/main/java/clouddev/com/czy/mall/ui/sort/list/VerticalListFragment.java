@@ -22,7 +22,7 @@ import clouddev.com.czy.ui.LoaderStyle;
 import clouddev.com.czy.ui.recycler.MultipleItemEntity;
 
 /**
- * Created by 29737 on 2018/3/10.
+ * Created by 29737
  */
 
 public class VerticalListFragment extends CoreFragment

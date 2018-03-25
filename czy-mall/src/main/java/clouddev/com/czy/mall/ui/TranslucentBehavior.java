@@ -11,7 +11,7 @@ import android.view.View;
 import clouddev.com.czy.mall.R;
 
 /**
- * Created by 29737 on 2018/3/8.
+ * Created by 29737
  */
 
 public class TranslucentBehavior extends CoordinatorLayout.Behavior<Toolbar>

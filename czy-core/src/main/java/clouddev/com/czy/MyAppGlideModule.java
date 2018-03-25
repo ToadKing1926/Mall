@@ -4,7 +4,7 @@ import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.module.AppGlideModule;
 
 /**
- * Created by 29737 on 2018/3/5.
+ * Created by 29737
  * Glide GeneratedAPI所需要，不能位于二级包下
  */
 @GlideModule

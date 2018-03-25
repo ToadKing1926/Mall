@@ -30,6 +30,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.0.2'
     api 'com.android.support:support-v4:27.0.2'
     api 'com.android.support:design:27.0.2'
+    api 'com.android.support:cardview-v7:27.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
@@ -61,5 +62,15 @@ dependencies {
     //RecyclerView
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     api 'com.choices.divider:RecyclerView_Divider:1.0.0'
+
+    //圆形头像
+    api 'de.hdodenhof:circleimageview:2.2.0'
+    //图片裁剪
+    api 'com.github.yalantis:ucrop:2.2.1-native'
+    //权限管理
+    api "com.github.hotchemi:permissionsdispatcher:3.1.0"
+    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.1.0"
+    //工具库
+    api 'com.blankj:utilcode:1.13.6'
 
 }

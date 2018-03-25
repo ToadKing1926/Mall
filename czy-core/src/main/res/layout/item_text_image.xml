@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="300dp"
     android:background="@android:color/white">
-    <android.support.v7.widget.AppCompatImageView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
         android:id="@+id/image_combine"
         android:layout_gravity="center"
         android:background="@android:color/holo_orange_light"/>
-    <android.support.v7.widget.AppCompatTextView
+    <TextView
         android:id="@+id/text_combine"
         android:layout_width="match_parent"
         android:layout_height="0dp"

@@ -8,7 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.WeakHashMap;
 
 /**
- * Created by 29737 on 2018/1/11.
+ * Created by 29737
  */
 
 public class MultipleItemEntity implements MultiItemEntity

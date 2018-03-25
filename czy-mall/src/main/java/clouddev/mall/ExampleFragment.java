@@ -3,6 +3,7 @@ package clouddev.mall;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.Toast;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -14,12 +15,12 @@ import clouddev.com.czy.mall.R2;
 import clouddev.com.czy.mall.ui.cart.CartFragment;
 import clouddev.com.czy.mall.ui.discover.DiscoverFragment;
 import clouddev.com.czy.mall.ui.main.MainFragment;
-import clouddev.com.czy.mall.ui.MineFragment;
+import clouddev.com.czy.mall.ui.mine.MineFragment;
 import clouddev.com.czy.mall.ui.sort.SortFragment;
 import me.yokeyword.fragmentation.SupportFragment;
 
 /**
- * Created by 29737 on 2017/12/23.
+ * Created by 29737
  */
 
 public class ExampleFragment extends CoreFragment implements BottomNavigationBar.OnTabSelectedListener
@@ -35,6 +36,9 @@ public class ExampleFragment extends CoreFragment implements BottomNavigationBar
 
     private SupportFragment[] mFragments = new SupportFragment[5];
     private int currentPosition = 0;
+    //再按一次退出时间设置
+    private static final long WAIT_TIME = 2000L;
+    private long TOUCH_TIME = 0;
 
     @Override
     public Object setLayout()
@@ -56,11 +60,6 @@ public class ExampleFragment extends CoreFragment implements BottomNavigationBar
     }
 
 
-
-    private void TestRestfulClient()
-    {
-
-    }
 
    private void init()
    {
@@ -121,5 +120,20 @@ public class ExampleFragment extends CoreFragment implements BottomNavigationBar
     public void onTabReselected(int position)
     {
 
+    }
+
+    @Override
+    public boolean onBackPressedSupport()
+    {
+        if(System.currentTimeMillis() - TOUCH_TIME < WAIT_TIME)
+        {
+            getFVActivity().finish();
+        }
+        else
+        {
+            TOUCH_TIME = System.currentTimeMillis();
+            Toast.makeText(getContext(),"再按一次以退出",Toast.LENGTH_SHORT).show();
+        }
+        return true;
     }
 }

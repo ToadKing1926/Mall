@@ -1,7 +1,7 @@
 package clouddev.com.czy.fragment;
 
 /**
- * Created by 29737 on 2017/12/23.
+ * Created by 29737
  */
 
 public abstract class CoreFragment extends PermissionCheckFragment

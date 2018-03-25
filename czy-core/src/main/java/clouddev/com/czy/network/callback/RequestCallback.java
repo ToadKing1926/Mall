@@ -10,7 +10,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Created by 29737 on 2017/12/25.
+ * Created by 29737
  */
 
 public class RequestCallback implements Callback<String>

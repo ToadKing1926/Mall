@@ -20,7 +20,7 @@ import retrofit2.http.Streaming;
 import retrofit2.http.Url;
 
 /**
- * Created by 29737 on 2017/12/24.
+ * Created by 29737
  */
 
 public interface RestfulService

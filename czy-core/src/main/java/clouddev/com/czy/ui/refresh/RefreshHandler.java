@@ -18,7 +18,7 @@ import clouddev.com.czy.ui.recycler.DataConverter;
 import clouddev.com.czy.ui.recycler.MultipleRecyclerViewAdapter;
 
 /**
- * Created by 29737 on 2018/1/10.
+ * Created by 29737
  */
 
 public class RefreshHandler implements SwipeRefreshLayout.OnRefreshListener,BaseQuickAdapter.RequestLoadMoreListener

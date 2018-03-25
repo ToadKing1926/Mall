@@ -1,7 +1,7 @@
 package clouddev.com.czy.app;
 
 /**
- * Created by 29737 on 2018/1/4.
+ * Created by 29737
  */
 
 public interface iUserCheck

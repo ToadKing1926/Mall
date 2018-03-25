@@ -11,7 +11,7 @@ import clouddev.com.czy.fragment.CoreFragment;
 import clouddev.com.czy.mall.detail.ProductDetailFragment;
 
 /**
- * Created by 29737 on 2018/3/9.
+ * Created by 29737
  */
 
 public class MainItemClickListener extends SimpleClickListener

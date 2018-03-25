@@ -4,13 +4,20 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
 import org.litepal.crud.DataSupport;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -19,16 +26,18 @@ import clouddev.com.czy.mall.R;
 import clouddev.com.czy.mall.R2;
 import clouddev.com.czy.mall.database.UserInfo;
 import clouddev.com.czy.network.RestfulClient;
+import clouddev.com.czy.network.callback.iError;
+import clouddev.com.czy.network.callback.iFailure;
 import clouddev.com.czy.network.callback.iSuccess;
 
 /**
- * Created by 29737 on 2018/1/2.
+ * Created by 29737
  */
 
 public class SignInFragment extends CoreFragment
 {
-    @BindView(R2.id.sign_in_e_mail)
-    TextInputEditText mEMail = null;
+    @BindView(R2.id.sign_in_username)
+    TextInputEditText mUsername = null;
     @BindView(R2.id.sign_in_password)
     TextInputEditText mPassword = null;
 
@@ -37,20 +46,41 @@ public class SignInFragment extends CoreFragment
     @OnClick(R2.id.sign_in_confirm)
     void onClickConfirm()
     {
+        Map<String,Object> params = new HashMap<>();
+       params.put("username",mUsername.getText().toString());
+       params.put("password",mPassword.getText().toString());
        if(check())
        {
 
             RestfulClient.builder()
-                         .url("sign_in")
-                         .params("","")
+                         .url("http://test.happymmall.com/user/login.do")
+                         .params(params)
                          .success(new iSuccess()
                          {
                              @Override
-                             public void onSuccess(String Response)
+                             public void onSuccess(String response)
                              {
-                                 mISignListener.onSignInSuccess();
+                                 final JSONObject obj = JSON.parseObject(response);
+                                 final int status = obj.getInteger("status");
+                                 if(status == 1)
+                                 {
+                                     final String msg = obj.getString("msg");
+                                     Toast.makeText(getContext(),msg,Toast.LENGTH_SHORT).show();
+                                 }
+                                 else
+                                 {
+                                     mISignListener.onSignInSuccess();
+                                 }
                              }
                          })
+                        .failure(new iFailure()
+                        {
+                            @Override
+                            public void onFaliure()
+                            {
+                                Toast.makeText(getContext(),"登录失败！请检查网络",Toast.LENGTH_SHORT).show();
+                            }
+                        })
                         .build()
                         .post();
        }
@@ -74,7 +104,6 @@ public class SignInFragment extends CoreFragment
         super.onAttach(activity);
         if(activity instanceof iSignListener)
         {
-            Toast.makeText(getContext(),"sign in",Toast.LENGTH_LONG).show();
             mISignListener = (iSignListener)activity;
         }
     }
@@ -83,7 +112,7 @@ public class SignInFragment extends CoreFragment
     {
 
         final String password = mPassword.getText().toString();
-        final String eMail = mEMail.getText().toString();
+        final String username = mUsername.getText().toString();
 
         boolean isPass = true;
 
@@ -99,14 +128,14 @@ public class SignInFragment extends CoreFragment
             mPassword.setError(null);
         }
 
-        if(eMail.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(eMail).matches())
+        if(username.isEmpty())
         {
-            mEMail.setError("邮箱格式错误");
+            mUsername.setError("邮箱格式错误");
             isPass = false;
         }
         else
         {
-            mEMail.setError(null);
+            mUsername.setError(null);
         }
         return isPass;
     }

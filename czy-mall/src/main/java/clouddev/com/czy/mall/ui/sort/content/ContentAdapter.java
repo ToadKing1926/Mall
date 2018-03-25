@@ -1,6 +1,7 @@
 package clouddev.com.czy.mall.ui.sort.content;
 
-import android.support.v7.widget.AppCompatImageView;
+
+import android.widget.ImageView;
 
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.chad.library.adapter.base.BaseSectionQuickAdapter;
@@ -14,7 +15,7 @@ import clouddev.com.czy.mall.bean.SectionContentItemBean;
 import clouddev.com.czy.mall.bean.SortContentBean;
 
 /**
- * Created by 29737 on 2018/3/12.
+ * Created by 29737
  */
 
 public class ContentAdapter extends BaseSectionQuickAdapter<SortContentBean,BaseViewHolder>
@@ -42,12 +43,12 @@ public class ContentAdapter extends BaseSectionQuickAdapter<SortContentBean,Base
        final int id = item.t.getId();
        final SectionContentItemBean sectionContentItemBean = item.t;
        helper.setText(R.id.tv,name);
-       final AppCompatImageView appCompatImageView = helper.getView(R.id.iv);
+       final ImageView imageView = helper.getView(R.id.iv);
 
         GlideApp.with(mContext)
                 .load(thumb)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .dontAnimate()
-                .into(appCompatImageView);
+                .into(imageView);
     }
 }

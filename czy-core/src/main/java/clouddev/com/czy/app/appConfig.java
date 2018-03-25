@@ -3,6 +3,7 @@ package clouddev.com.czy.app;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 
+import com.blankj.utilcode.util.Utils;
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
 
@@ -15,7 +16,7 @@ import okhttp3.Interceptor;
 
 
 /**
- * Created by 29737 on 2017/12/21.
+ * Created by 29737
  */
 
 public class appConfig
@@ -42,6 +43,7 @@ public class appConfig
     {
         initIcons();
         APP_CONFIGRATION.put(ConfigType.CONFIG_READY.name(),true);
+        Utils.init(appInit.getApplication());
     }
 
     public static appConfig getInstance()

@@ -18,7 +18,7 @@ import me.yokeyword.fragmentation.SupportActivity;
 
 
 /**
- * Created by 29737 on 2017/12/23.
+ * Created by 29737
  */
 
 public abstract class FragmentVectorActivity extends SupportActivity

@@ -4,7 +4,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
+
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
@@ -16,13 +16,14 @@ import com.youth.banner.BannerConfig;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import clouddev.com.czy.GlideApp;
 import clouddev.com.czy.R;
 import clouddev.com.czy.util.GlideImageLoader;
 
 
 /**
- * Created by 29737 on 2018/3/5.
+ * Created by 29737
  */
 
 public class MultipleRecyclerViewAdapter extends BaseMultiItemQuickAdapter<MultipleItemEntity,MultipleViewHolder>

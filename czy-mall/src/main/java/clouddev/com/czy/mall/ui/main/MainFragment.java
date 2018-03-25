@@ -24,7 +24,7 @@ import clouddev.com.czy.ui.refresh.RefreshHandler;
 import clouddev.mall.ExampleFragment;
 
 /**
- * Created by 29737 on 2018/1/8.
+ * Created by 29737
  */
 
 public class MainFragment extends CoreFragment

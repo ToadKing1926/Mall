@@ -13,5 +13,9 @@ public enum MultipleFields
     SPAN_SIZE,
     ID,
     NAME,
-    TAG
+    TAG,
+    COUNT,
+    TIME,
+    TITLE,
+    PHONE
 }

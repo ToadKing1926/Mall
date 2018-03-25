@@ -3,7 +3,7 @@ package clouddev.com.czy.mall.database;
 import org.litepal.crud.DataSupport;
 
 /**
- * Created by 29737 on 2018/1/4.
+ * Created by 29737
  */
 
 public class UserInfo extends DataSupport

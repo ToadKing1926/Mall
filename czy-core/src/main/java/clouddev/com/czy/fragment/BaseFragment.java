@@ -15,7 +15,7 @@ import clouddev.com.czy.activity.FragmentVectorActivity;
 import me.yokeyword.fragmentation_swipeback.SwipeBackFragment;
 
 /**
- * Created by 29737 on 2017/12/23.
+ * Created by 29737
  */
 
 public abstract class BaseFragment extends SwipeBackFragment
@@ -30,7 +30,9 @@ public abstract class BaseFragment extends SwipeBackFragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
+
         View rootView=null;
+
         if(setLayout() instanceof Integer)
         {
             rootView = inflater.inflate((Integer)setLayout(),container,false);

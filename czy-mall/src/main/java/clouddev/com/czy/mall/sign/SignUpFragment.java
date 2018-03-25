@@ -5,9 +5,16 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.widget.AppCompatTextView;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -17,11 +24,12 @@ import clouddev.com.czy.mall.R;
 import clouddev.com.czy.mall.R2;
 import clouddev.com.czy.mall.database.UserInfo;
 import clouddev.com.czy.network.RestfulClient;
+import clouddev.com.czy.network.callback.iError;
 import clouddev.com.czy.network.callback.iFailure;
 import clouddev.com.czy.network.callback.iSuccess;
 
 /**
- * Created by 29737 on 2018/1/2.
+ * Created by 29737
  */
 
 public class SignUpFragment extends CoreFragment
@@ -44,36 +52,57 @@ public class SignUpFragment extends CoreFragment
     @OnClick(R2.id.sign_up_confirm)
     void onClickConfirm()
     {
+        Map<String,Object> params = new HashMap<>(6);
+
         if(check())
         {
+            params.put("username",mId.getText().toString());
+            params.put("password",mPassword.getText().toString());
+            params.put("email",mEMail.getText().toString());
+            params.put("phone",mPhoneNumber.getText().toString());
+            params.put("question","同志们好");
+            params.put("answer","首长好");
 
              RestfulClient.builder()
-                         .url("sign_up")
-                         .params("","")
-                         .success(new iSuccess() {
+                         .url("http://test.happymmall.com/user/register.do")
+                         .params(params)
+                         .success(new iSuccess()
+                         {
                              @Override
-                             public void onSuccess(String Response)
+                             public void onSuccess(String response)
                              {
-                                 UserInfo userInfo = new UserInfo();
-                                 userInfo.setUsername(mId.getText().toString());
-                                 userInfo.setPassword(mPassword.getText().toString());
-                                 userInfo.setEmail(mEMail.getText().toString());
-                                 userInfo.setPhone(mPhoneNumber.getText().toString());
-                                 if(!userInfo.save())
+                                 final JSONObject obj = JSON.parseObject(response);
+                                 final int status = obj.getInteger("status");
+                                 if(status == 1)
                                  {
-                                     Toast.makeText(getContext(),"缓存失败",Toast.LENGTH_LONG).show();
+                                     final String msg = obj.getString("msg");
+                                     Toast.makeText(getContext(),msg,Toast.LENGTH_SHORT).show();
                                  }
                                  else
                                  {
-                                     mISignListener.onSignUpSuccess();
+                                     UserInfo userInfo = new UserInfo();
+                                     userInfo.setUsername(mId.getText().toString());
+                                     userInfo.setPassword(mPassword.getText().toString());
+                                     userInfo.setEmail(mEMail.getText().toString());
+                                     userInfo.setPhone(mPhoneNumber.getText().toString());
+                                     if(!userInfo.save())
+                                     {
+                                         Toast.makeText(getContext(),"缓存失败",Toast.LENGTH_LONG).show();
+                                     }
+                                     else
+                                     {
+                                         mISignListener.onSignUpSuccess();
+                                     }
                                  }
                              }
+
                          })
                          .failure(new iFailure() {
                              @Override
                              public void onFaliure()
                              {
-                                 Toast.makeText(getContext(),"注册失败！",Toast.LENGTH_LONG).show();
+                                 Log.d("Hola","Fail!");
+                                 Toast.makeText(getContext(),"注册失败！请检查网络",Toast.LENGTH_SHORT).show();
                              }
                          })
                         .build()

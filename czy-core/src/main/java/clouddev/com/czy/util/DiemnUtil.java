@@ -7,7 +7,7 @@ import clouddev.com.czy.app.appInit;
 
 
 /**
- * Created by 29737 on 2017/12/27.
+ * Created by 29737
  */
 
 public class DiemnUtil

@@ -8,7 +8,7 @@ import com.alibaba.fastjson.JSONObject;
 import clouddev.com.czy.app.appInit;
 
 /**
- * Created by 29737 on 2018/1/1.
+ * Created by 29737
  */
 
 public final class appPreference

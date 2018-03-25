@@ -12,7 +12,7 @@ import clouddev.com.czy.mall.bean.SortContentBean;
 import clouddev.com.czy.ui.recycler.DataConverter;
 
 /**
- * Created by 29737 on 2018/3/12.
+ * Created by 29737
  */
 
 public class SortContentDataConverter

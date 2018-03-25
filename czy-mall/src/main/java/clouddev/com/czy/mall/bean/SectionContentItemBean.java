@@ -1,7 +1,7 @@
 package clouddev.com.czy.mall.bean;
 
 /**
- * Created by 29737 on 2018/3/12.
+ * Created by 29737
  */
 
 public class SectionContentItemBean

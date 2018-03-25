@@ -3,7 +3,7 @@ package clouddev.com.czy.mall.bean;
 import com.chad.library.adapter.base.entity.SectionEntity;
 
 /**
- * Created by 29737 on 2018/3/12.
+ * Created by 29737
  */
 
 public class SortContentBean extends SectionEntity<SectionContentItemBean>

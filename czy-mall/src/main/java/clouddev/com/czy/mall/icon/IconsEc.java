@@ -3,7 +3,7 @@ package clouddev.com.czy.mall.icon;
 import com.joanzapata.iconify.Icon;
 
 /**
- * Created by 29737 on 2017/12/22.
+ * Created by 29737
  */
 
 public enum IconsEc implements Icon

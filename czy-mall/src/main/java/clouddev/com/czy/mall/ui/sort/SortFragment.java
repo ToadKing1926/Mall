@@ -10,7 +10,7 @@ import clouddev.com.czy.mall.ui.sort.content.ContentFragment;
 import clouddev.com.czy.mall.ui.sort.list.VerticalListFragment;
 
 /**
- * Created by 29737 on 2018/3/10.
+ * Created by 29737
  */
 
 public class SortFragment extends CoreFragment
