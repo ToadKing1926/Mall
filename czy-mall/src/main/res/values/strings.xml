@@ -47,4 +47,17 @@
     <string name="open_source">开源组件许可</string>
 
     <string name="rate">评价</string>
+    <string name="log_out">退出登录</string>
+
+    <string name="like">联系客服</string>
+    <string name="add_to_cart">加入购物车</string>
+    <string name="product_detail">商品详情</string>
+
+    <string name="add_address">添加地址</string>
+    <string name="hint_name">请输入收货人姓名</string>
+    <string name="hint_phone_number">请输入手机号码</string>
+    <string name="hint_pick">所在区域</string>
+    <string name="area">所在区域</string>
+    <string name="choose_area">点此选择</string>
+    <string name="detail_address">请输入详细地址</string>
 </resources>

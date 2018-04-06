@@ -123,6 +123,4 @@ public class appConfig
     {
         return APP_CONFIGRATION;
     }
-
-
 }

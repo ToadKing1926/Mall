@@ -8,5 +8,6 @@ public class ListItemType
 {
     public static final int ARROW_ITEM_LAYOUT = 20;
     public static final int ARROW_ITEM_AVATAR = 21;
-    public static final int ARROW_ITEM_SWITCH= 22;
+    public static final int ARROW_ITEM_SWITCH = 22;
+    public static final int ITEM_BUTTON = 23;
 }

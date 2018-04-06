@@ -4,6 +4,7 @@ package clouddev.com.czy.mall.ui.mine.list;
 
 import android.graphics.Color;
 import android.support.v7.widget.SwitchCompat;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -23,11 +24,10 @@ import static clouddev.com.czy.mall.ui.mine.list.ListItemType.*;
 
 public class ListAdapter extends BaseMultiItemQuickAdapter<ListBean,BaseViewHolder>
 {
-
-
     public ListAdapter(List<ListBean> data)
     {
         super(data);
+        addItemType(ITEM_BUTTON,R.layout.arrow_item_layout);
         addItemType(ARROW_ITEM_LAYOUT, R.layout.arrow_item_layout);
         addItemType(ARROW_ITEM_AVATAR,R.layout.arrow_item_avatar);
         addItemType(ARROW_ITEM_SWITCH,R.layout.arrow_switch_layout);
@@ -36,9 +36,12 @@ public class ListAdapter extends BaseMultiItemQuickAdapter<ListBean,BaseViewHold
     @Override
     protected void convert(BaseViewHolder helper, ListBean item)
     {
-
         switch (helper.getItemViewType())
         {
+            case ITEM_BUTTON:
+                helper.setText(R.id.mine_arrow_text,item.getText());
+                helper.setVisible(R.id.mine_arrow_value, false);
+                break;
             case ARROW_ITEM_LAYOUT:
                 helper.setText(R.id.mine_arrow_text,item.getText());
                 helper.setText(R.id.mine_arrow_value,item.getValue());

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/holo_orange_dark">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/add_address"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+        </android.support.v7.widget.Toolbar>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:text="@string/name"
+                android:textSize="18sp"
+                android:gravity="center_vertical|start"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                />
+            <EditText
+                android:id="@+id/address_name_view"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:hint="@string/hint_name"
+                android:gravity="center_vertical|end"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:text="@string/phone_number"
+                android:textSize="18sp"
+                android:gravity="center_vertical|start"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                />
+            <EditText
+                android:id="@+id/address_phone_view"
+                android:hint="@string/hint_phone_number"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:gravity="center_vertical|end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp">
+            <TextView
+                android:text="@string/area"
+                android:textSize="18sp"
+                android:gravity="center_vertical|start"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:id="@+id/address_location_view"
+                android:textSize="18sp"
+                android:text="@string/choose_area"
+                android:gravity="center_vertical|end"
+                android:background="@null"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/address_details_view"
+            android:hint="@string/detail_address"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="top"/>
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/confirm_address_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_done_24dp" />
+</android.support.design.widget.CoordinatorLayout>

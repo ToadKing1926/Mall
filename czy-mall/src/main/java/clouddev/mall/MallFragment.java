@@ -23,7 +23,7 @@ import me.yokeyword.fragmentation.SupportFragment;
  * Created by 29737
  */
 
-public class ExampleFragment extends CoreFragment implements BottomNavigationBar.OnTabSelectedListener
+public class MallFragment extends CoreFragment implements BottomNavigationBar.OnTabSelectedListener
 {
    @BindView(R2.id.bottom_navigation_bar)
    BottomNavigationBar bottomNavigationBar = null;
@@ -32,9 +32,8 @@ public class ExampleFragment extends CoreFragment implements BottomNavigationBar
     public static final int SECOND = 1;
     public static final int THIRD = 2;
     public static final int FOURTH = 3;
-    public static final int FIFTH = 4;
 
-    private SupportFragment[] mFragments = new SupportFragment[5];
+    private SupportFragment[] mFragments = new SupportFragment[4];
     private int currentPosition = 0;
     //再按一次退出时间设置
     private static final long WAIT_TIME = 2000L;
@@ -68,16 +67,15 @@ public class ExampleFragment extends CoreFragment implements BottomNavigationBar
        {
            mFragments[FIRST] = new MainFragment();
            mFragments[SECOND] = new SortFragment();
-           mFragments[THIRD] = new DiscoverFragment();
-           mFragments[FOURTH] = new CartFragment();
-           mFragments[FIFTH] = new MineFragment();
+           mFragments[THIRD] = new CartFragment();
+           mFragments[FOURTH] = new MineFragment();
 
            loadMultipleRootFragment(R.id.fragment_container, FIRST,
                    mFragments[FIRST],
                    mFragments[SECOND],
                    mFragments[THIRD],
-                   mFragments[FOURTH],
-                   mFragments[FIFTH] );
+                   mFragments[FOURTH]
+                   );
        } else
            {
            // 这里库已经做了Fragment恢复,所有不需要额外的处理了, 不会出现重叠问题
@@ -86,7 +84,6 @@ public class ExampleFragment extends CoreFragment implements BottomNavigationBar
            mFragments[SECOND] = findChildFragment(SortFragment.class);
            mFragments[THIRD] =  findChildFragment(DiscoverFragment.class);
            mFragments[FOURTH] = findChildFragment(CartFragment.class);
-           mFragments[FIFTH] = findChildFragment(MineFragment.class);
        }
    }
 
@@ -95,7 +92,6 @@ public class ExampleFragment extends CoreFragment implements BottomNavigationBar
            bottomNavigationBar
                    .addItem(new BottomNavigationItem(R.drawable.ic_home_black_24dp,"首页"))
                    .addItem(new BottomNavigationItem(R.drawable.ic_sort_black_24dp,"分类"))
-                   .addItem(new BottomNavigationItem(R.drawable.ic_search_black_24dp,"发现"))
                    .addItem(new BottomNavigationItem(R.drawable.ic_add_shopping_cart_black_24dp,"购物车"))
                    .addItem(new BottomNavigationItem(R.drawable.ic_account_circle_black_24dp,"我的"))
                    .setMode(BottomNavigationBar.MODE_FIXED)

@@ -1,0 +1,40 @@
+{
+  "code": 0,
+  "message": "ok",
+  "data": {
+    "content": "内容概述",
+    "banners": [
+      "https://i1.mifile.cn/a1/pms_1519959193.42473450!220x220.jpg",
+      "https://i1.mifile.cn/a4/xmad_15235903896859_YbOJA.jpg",
+      "https://i1.mifile.cn/a4/xmad_15235903896859_YbOJA.jpg"
+    ],
+    "tabs": [
+      {
+        "name": "商品详情",
+        "pictures": [
+          "https://i1.mifile.cn/a1/pms_1519959193.42473450!220x220.jpg",
+          "https://i1.mifile.cn/a4/xmad_15236155638237_NehQx.jpg",
+          "https://i1.mifile.cn/a4/xmad_15236079841669_pbktR.jpg",
+          "https://i1.mifile.cn/a4/xmad_15235903896859_YbOJA.jpg"
+        ]
+      },
+      {
+        "name": "规格参数",
+        "pictures": [
+          "https://i1.mifile.cn/a1/pms_1519959193.42473450!220x220.jpg",
+          "https://i1.mifile.cn/a4/xmad_15236155638237_NehQx.jpg",
+          "https://i1.mifile.cn/a4/xmad_15236079841669_pbktR.jpg",
+          "https://i1.mifile.cn/a4/xmad_15235903896859_YbOJA.jpg",
+          "https://i1.mifile.cn/a4/T1a5JjBbVT1RXrhCrK.jpg"
+        ]
+      }
+    ],
+    "spec": "规格参数",
+    "inventiry": "规格参数",
+    "id": 0,
+    "name": "小米电视4A",
+    "desc": "老人小孩都会用的人工智能语音电视",
+    "price": "￥1399",
+    "thumb": "http://img4.mukewang.com/574669dc0001993606000338-240-135.jpg"
+  }
+}

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.WeakHashMap;
 
@@ -22,7 +23,7 @@ import okhttp3.RequestBody;
 public class RestfulClientBuilder
 {
     private  String mUrl;
-    private  Map<String,Object> mParams;
+    private  Map<String,Object> mParams = new HashMap<>();
     private  iRequest mRequest;
     private  iSuccess mSuccess;
     private  iError mError;

@@ -4,23 +4,23 @@
   "data":[
     {
       "id":1,
-      "name":"江泽民",
+      "name":"张三",
       "phone":"13706331245",
-      "address":"江苏省扬州市江都区233号",
+      "address":"江苏扬州江都区233号",
       "default":true
     },
     {
       "id":2,
-      "name":"胡锦涛",
+      "name":"李四",
       "phone":"13706331258",
-      "address":"江苏省泰州市海陵区233号",
+      "address":"江苏泰州海陵区233号",
       "default":false
     },
     {
       "id":3,
-      "name":"习近平",
+      "name":"王五",
       "phone":"13706331545",
-      "address":"陕西省渭南市富平县233号",
+      "address":"陕西渭南富平县233号",
       "default":false
     }
   ]

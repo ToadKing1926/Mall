@@ -1,0 +1,64 @@
+{
+  "code":0,
+  "message":"ok",
+  "data":[
+    {
+      "id":1,
+      "section":"笔记本电脑",
+      "products":[
+        {
+          "product_id":3,
+          "product_thumb":"https://i8.mifile.cn/b2c-mimall-media/f02462e783c13554eabc4286828bbc7c.jpg",
+          "product_name":"15.6笔记本Pro i5 8GB"
+        },
+        {
+          "product_id":4,
+          "product_thumb":"https://i8.mifile.cn/b2c-mimall-media/a20dc22f36750ae93eb51dfb579cd7bd.jpg",
+          "product_name":"13.3笔记本八代四核i7"
+        },
+        {
+          "product_id":5,
+          "product_thumb":"https://i8.mifile.cn/b2c-mimall-media/c1bd4b3affc9c7af5b2844776049759c.jpg",
+          "product_name":"13.3笔记本四核i5"
+        }
+      ]
+    },
+    {
+      "id":2,
+      "section":"电脑配件",
+      "products":[
+        {
+          "product_id":2,
+          "product_thumb":"https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/747bdc5fe4ae9976ac05e8af1eb4c52e.jpg?bg=BAC6A4",
+          "product_name":"小米无线鼠标"
+        },
+        {
+          "product_id":3,
+          "product_thumb":"https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/c01573cec4d3363d7efd511cbf7cfbc1.jpg",
+          "product_name":"笔记本转接器"
+        },
+        {
+          "product_id":4,
+          "product_thumb":"https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/648060ed1a8ef00f5756679ef7ba6971.jpg",
+          "product_name":"USB-C 电源适配器"
+        },
+        {
+          "product_id":5,
+          "product_thumb":"https://i8.mifile.cn/b2c-mimall-media/b723d4cb2878807e61ead56be6d07d89.jpg?bg=BABBC8",
+          "product_name":"13.3寸笔记本内胆包"
+        },
+        {
+          "product_id":6,
+          "product_thumb":"https://i8.mifile.cn/b2c-mimall-media/f79a517ca54ef992b369bdee2dcc0f02.jpg?bg=C6CDD7",
+          "product_name":"13.3寸笔记本贴纸"
+        },
+        {
+          "product_id":7,
+          "product_thumb":"https://i8.mifile.cn/b2c-mimall-media/07855602fac2eed999563c7e3d232d5c.jpg?bg=D3E2B9",
+          "product_name":"多功能转接器"
+        }
+      ]
+    }
+  ]
+
+}

@@ -1,5 +1,6 @@
 package clouddev.com.czy.mall.ui.mine.address;
 
+import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
 
@@ -11,6 +12,9 @@ import clouddev.com.czy.ui.recycler.MultipleFields;
 import clouddev.com.czy.ui.recycler.MultipleItemEntity;
 import clouddev.com.czy.ui.recycler.MultipleRecyclerViewAdapter;
 import clouddev.com.czy.ui.recycler.MultipleViewHolder;
+import clouddev.com.czy.util.callback.CallBackManager;
+import clouddev.com.czy.util.callback.CallBackType;
+import clouddev.com.czy.util.callback.iGlobalCallback;
 
 /**
  * Created by 29737
@@ -42,6 +46,10 @@ public class AddressAdapter extends MultipleRecyclerViewAdapter
                 final TextView addressText = holder.getView(R.id.address_address);
                 final TextView deleteText = holder.getView(R.id.address_delete);
 
+                if(!isDefault)
+                {
+                    nameText.setTextColor(Color.GRAY);
+                }
                 deleteText.setOnClickListener(new View.OnClickListener()
                 {
                     @Override

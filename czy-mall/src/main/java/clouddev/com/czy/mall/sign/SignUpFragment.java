@@ -35,7 +35,7 @@ import clouddev.com.czy.network.callback.iSuccess;
 public class SignUpFragment extends CoreFragment
 {
     @BindView(R2.id.sign_up_id)
-    TextInputEditText mId = null;
+    TextInputEditText mUsername = null;
     @BindView(R2.id.sign_up_password)
     TextInputEditText mPassword = null;
     @BindView(R2.id.sign_up_password_confirm)
@@ -56,15 +56,14 @@ public class SignUpFragment extends CoreFragment
 
         if(check())
         {
-            params.put("username",mId.getText().toString());
+            mISignListener.onSignUpSuccess("123456789");
+            /*params.put("username",mUsername.getText().toString());
             params.put("password",mPassword.getText().toString());
             params.put("email",mEMail.getText().toString());
             params.put("phone",mPhoneNumber.getText().toString());
-            params.put("question","同志们好");
-            params.put("answer","首长好");
 
              RestfulClient.builder()
-                         .url("http://test.happymmall.com/user/register.do")
+                         .url("http://192.168.1.119:8088/user/register.do")
                          .params(params)
                          .success(new iSuccess()
                          {
@@ -76,12 +75,11 @@ public class SignUpFragment extends CoreFragment
                                  if(status == 1)
                                  {
                                      final String msg = obj.getString("msg");
-                                     Toast.makeText(getContext(),msg,Toast.LENGTH_SHORT).show();
                                  }
                                  else
                                  {
                                      UserInfo userInfo = new UserInfo();
-                                     userInfo.setUsername(mId.getText().toString());
+                                     userInfo.setUsername(mUsername.getText().toString());
                                      userInfo.setPassword(mPassword.getText().toString());
                                      userInfo.setEmail(mEMail.getText().toString());
                                      userInfo.setPhone(mPhoneNumber.getText().toString());
@@ -91,22 +89,32 @@ public class SignUpFragment extends CoreFragment
                                      }
                                      else
                                      {
-                                         mISignListener.onSignUpSuccess();
+                                         final String token = obj.getString("data");
+                                         mISignListener.onSignInSuccess(token);
                                      }
                                  }
                              }
 
                          })
+                         .error(new iError()
+                         {
+                             @Override
+                             public void onError(int code, String msg)
+                             {
+                                 Log.d("Hola",msg);
+                             }
+                         })
                          .failure(new iFailure() {
                              @Override
                              public void onFaliure()
                              {
-                                 Log.d("Hola","Fail!");
-                                 Toast.makeText(getContext(),"注册失败！请检查网络",Toast.LENGTH_SHORT).show();
+                                 Log.d("Hola","Sign Up");
+                                 mISignListener.onSignUpSuccess("123456789");
+                                 //Toast.makeText(getContext(),"注册失败！请检查网络",Toast.LENGTH_SHORT).show();
                              }
                          })
                         .build()
-                        .post();
+                        .post();*/
 
         }
     }
@@ -129,7 +137,7 @@ public class SignUpFragment extends CoreFragment
 
     private boolean check()
    {
-        final String id = mId.getText().toString();
+        final String username = mUsername.getText().toString();
         final String password = mPassword.getText().toString();
         final String passwordConfirm = mPasswordConfirm.getText().toString();
         final String eMail = mEMail.getText().toString();
@@ -137,14 +145,14 @@ public class SignUpFragment extends CoreFragment
 
         boolean isPass = true;
 
-        if(id.isEmpty())
+        if(username.isEmpty())
         {
-            mId.setError("ID格式错误");
+            mUsername.setError("ID格式错误");
             isPass = false;
         }
         else
         {
-            mId.setError(null);
+            mUsername.setError(null);
         }
 
         if(password.isEmpty() || password.length()<6)

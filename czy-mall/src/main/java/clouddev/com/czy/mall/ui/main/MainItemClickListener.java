@@ -8,7 +8,9 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.SimpleClickListener;
 
 import clouddev.com.czy.fragment.CoreFragment;
-import clouddev.com.czy.mall.detail.ProductDetailFragment;
+import clouddev.com.czy.mall.product.ProductDetailFragment;
+import clouddev.com.czy.ui.recycler.MultipleFields;
+import clouddev.com.czy.ui.recycler.MultipleItemEntity;
 
 /**
  * Created by 29737
@@ -31,7 +33,9 @@ public class MainItemClickListener extends SimpleClickListener
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position)
     {
-        final ProductDetailFragment productDetailFragment = ProductDetailFragment.create();
+        MultipleItemEntity entity = (MultipleItemEntity) baseQuickAdapter.getData().get(position);
+        int productId = entity.getField(MultipleFields.ID);
+        ProductDetailFragment productDetailFragment = ProductDetailFragment.create(productId);
         FRAGMENT.start(productDetailFragment);
     }
 

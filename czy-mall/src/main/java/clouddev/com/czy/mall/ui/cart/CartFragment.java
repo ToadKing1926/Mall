@@ -8,19 +8,14 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.ViewStubCompat;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.joanzapata.iconify.widget.IconTextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.WeakHashMap;
-import java.util.concurrent.CancellationException;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -29,14 +24,12 @@ import clouddev.com.czy.fragment.CoreFragment;
 import clouddev.com.czy.mall.R;
 import clouddev.com.czy.mall.R2;
 import clouddev.com.czy.mall.converter.CartDataConverter;
-import clouddev.com.czy.mall.payment.FastPay;
-import clouddev.com.czy.mall.ui.main.MainFragment;
 import clouddev.com.czy.network.RestfulClient;
 import clouddev.com.czy.network.callback.iSuccess;
 import clouddev.com.czy.ui.LoaderStyle;
 import clouddev.com.czy.ui.recycler.MultipleFields;
 import clouddev.com.czy.ui.recycler.MultipleItemEntity;
-import clouddev.mall.ExampleFragment;
+import clouddev.mall.MallFragment;
 
 /**
  * Created by 29737
@@ -138,7 +131,7 @@ public class CartFragment extends CoreFragment
     @OnClick(R2.id.to_pay)
     void onPayment()
     {
-        FastPay.create(this).beginPay();
+
     }
 
 
@@ -155,8 +148,8 @@ public class CartFragment extends CoreFragment
                @Override
                public void onClick(View v)
                {
-                   ExampleFragment exampleFragment = (ExampleFragment)getParentFragment();
-                   exampleFragment.onTabSelected(ExampleFragment.FIRST);
+                   MallFragment exampleFragment = (MallFragment)getParentFragment();
+                   exampleFragment.onTabSelected(MallFragment.FIRST);
                }
            });
            mRecyclerView.setVisibility(View.GONE);

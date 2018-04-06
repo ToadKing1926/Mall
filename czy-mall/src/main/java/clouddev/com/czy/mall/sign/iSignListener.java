@@ -5,7 +5,8 @@ package clouddev.com.czy.mall.sign;
  */
 public interface iSignListener
 {
-        void onSignInSuccess();
-        void onSignUpSuccess();
+    void onSignInSuccess(String username);
+    void onSignUpSuccess(String username);
+
 }
 

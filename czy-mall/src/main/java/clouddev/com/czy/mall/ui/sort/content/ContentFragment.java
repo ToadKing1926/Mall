@@ -61,7 +61,7 @@ public class ContentFragment extends CoreFragment
     {
         RestfulClient.builder()
                      .params("","")
-                     .url("/sort_content")
+                     .url("/sort_content_" + mContentId)
                      .success(new iSuccess()
                      {
                          @Override

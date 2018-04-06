@@ -1,0 +1,64 @@
+{
+  "code":0,
+  "message":"ok",
+  "data":[
+    {
+      "id":1,
+      "section":"小米",
+      "products":[
+        {
+            "product_id":3,
+            "product_thumb":"https://i8.mifile.cn/b2c-mimall-media/12d7bb5bccb34eb03526d2c58539a43a.jpg",
+            "product_name":"小米5X变焦双摄"
+         },
+        {
+          "product_id":4,
+          "product_thumb":"https://i8.mifile.cn/b2c-mimall-media/bf1e585ccf509e12e584788d488571db.jpg",
+          "product_name":"小米6"
+        },
+        {
+          "product_id":5,
+          "product_thumb":"https://i8.mifile.cn/b2c-mimall-media/714f17d4bb80896d3adf6a2cc59b31d8.jpg",
+          "product_name":"小米MIX2"
+        }
+    ]
+    },
+    {
+      "id":2,
+      "section":"红米",
+      "products":[
+       {
+        "product_id":2,
+        "product_thumb":"https://i8.mifile.cn/b2c-mimall-media/4b533d5ec8823d2dc779ce90e09ab02d.jpg",
+        "product_name":"红米5"
+       },
+      {
+        "product_id":3,
+        "product_thumb":"https://i8.mifile.cn/b2c-mimall-media/c358575259b313192f95c4c69596e483.jpg",
+        "product_name":"红米5 Plus"
+      },
+        {
+        "product_id":4,
+        "product_thumb":"https://i8.mifile.cn/b2c-mimall-media/6c72a55bd766e16b4f050ce6cd1da793.jpg",
+        "product_name":"红米 Note4X"
+      },
+        {
+         "product_id":5,
+          "product_thumb":"https://i8.mifile.cn/b2c-mimall-media/966586ea32042cac85918f8d724b0069.jpg",
+          "product_name":"红米4A"
+     },
+    {
+         "product_id":6,
+         "product_thumb":"https://i8.mifile.cn/b2c-mimall-media/9c7017e7d0b3da6929593e600a711cf2.jpg",
+         "product_name":"红米Note5 AI双摄"
+    },
+      {
+        "product_id":7,
+        "product_thumb":"https://i8.mifile.cn/b2c-mimall-media/89a27049f108a1283c263d3271d819a6.jpg",
+        "product_name":"红米Note5A 自拍手机"
+      }
+    ]
+  }
+  ]
+
+}

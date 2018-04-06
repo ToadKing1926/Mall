@@ -72,5 +72,9 @@ dependencies {
     annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.1.0"
     //工具库
     api 'com.blankj:utilcode:1.13.6'
+    //二维码
+    api 'me.dm7.barcodescanner:zbar:1.9.8'
+    //地址选择
+    api  'liji.library.dev:citypickerview:2.1.1'
 
 }

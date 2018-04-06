@@ -39,21 +39,22 @@ public class RestfulClient
     private final String EXTENSION;
     private final String NAME;
 
-    public RestfulClient(String URL, Map<String, Object> PARAMS, iRequest REQUEST, iSuccess SUCCESS, iError ERROR, iFailure FAILURE, RequestBody BODY,LoaderStyle LOADER_STYLE,Context CONTEXT,File FILE,String DOWNLOAD_DIR,String EXTENSION,String NAME)
+    public RestfulClient(String url, Map<String, Object> params, iRequest request, iSuccess success, iError error, iFailure failure, RequestBody body
+            ,LoaderStyle loaderStyle,Context context,File file,String download_dir,String extension,String name)
     {
-        this.URL = URL;
-        this.PARAMS = PARAMS;
-        this.REQUEST = REQUEST;
-        this.SUCCESS = SUCCESS;
-        this.ERROR = ERROR;
-        this.FAILURE = FAILURE;
-        this.BODY = BODY;
-        this.LOADER_STYLE = LOADER_STYLE;
-        this.CONTEXT = CONTEXT;
-        this.FILE = FILE;
-        this.DOWNLOAD_DIR = DOWNLOAD_DIR;
-        this.EXTENSION = EXTENSION;
-        this.NAME = NAME;
+        this.URL = url;
+        this.PARAMS = params;
+        this.REQUEST = request;
+        this.SUCCESS = success;
+        this.ERROR = error;
+        this.FAILURE = failure;
+        this.BODY = body;
+        this.LOADER_STYLE = loaderStyle;
+        this.CONTEXT = context;
+        this.FILE = file;
+        this.DOWNLOAD_DIR = download_dir;
+        this.EXTENSION = extension;
+        this.NAME = name;
     }
 
     public static RestfulClientBuilder builder()

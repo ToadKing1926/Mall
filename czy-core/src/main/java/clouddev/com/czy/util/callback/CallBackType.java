@@ -6,5 +6,10 @@ package clouddev.com.czy.util.callback;
 
 public enum CallBackType
 {
-    ON_CROP
+    ON_CROP,
+    SCAN,
+    ADDRESS,
+    ADDRESSCHANGE,
+    SEARCH,
+    ON_CHANGE_AVATAR
 }

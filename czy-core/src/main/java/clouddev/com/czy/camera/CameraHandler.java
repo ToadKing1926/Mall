@@ -1,6 +1,6 @@
 package clouddev.com.czy.camera;
 
-import android.Manifest;
+
 import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -124,5 +124,4 @@ public class CameraHandler implements View.OnClickListener
             DIALOG.cancel();
         }
     }
-
 }

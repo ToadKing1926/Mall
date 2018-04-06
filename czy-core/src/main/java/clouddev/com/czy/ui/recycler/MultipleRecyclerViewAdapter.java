@@ -105,7 +105,6 @@ public class MultipleRecyclerViewAdapter extends BaseMultiItemQuickAdapter<Multi
                          .start();
                }
                break;
-
            default:
                break;
        }

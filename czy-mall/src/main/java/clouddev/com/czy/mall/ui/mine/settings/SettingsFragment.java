@@ -38,7 +38,7 @@ public class SettingsFragment extends CoreFragment
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView)
     {
-       final ListBean push = new ListBean.Builder()
+       ListBean push = new ListBean.Builder()
                 .setItemType(ListItemType.ARROW_ITEM_SWITCH)
                 .setId(1)
                 .setFragment(new AddressFragment())
@@ -56,13 +56,21 @@ public class SettingsFragment extends CoreFragment
                 })
                 .build();
 
-        final List<ListBean> data = new ArrayList<>();
-        data.add(push);
+        ListBean clear = new ListBean.Builder()
+                .setItemType(ListItemType.ITEM_BUTTON)
+                .setId(2)
+                .setText("清除缓存")
+                .build();
 
-        final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        List<ListBean> data = new ArrayList<>();
+        data.add(push);
+        data.add(clear);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(layoutManager);
-        final ListAdapter adapter = new ListAdapter(data);
+        ListAdapter adapter = new ListAdapter(data);
         mRecyclerView.setAdapter(adapter);
+        mRecyclerView.addOnItemTouchListener(new SettingListener(this.getContext()));
 
     }
 }

@@ -15,6 +15,7 @@ public final class appPreference
 {
     private static final SharedPreferences PREFERENCES = PreferenceManager.getDefaultSharedPreferences(appInit.getApplication());
     private static final String APP_PREFERENCES_KEY = "profile";
+    private static final String USER_TOKEN = "Username";
 
     private static SharedPreferences getAppPreference()
     {
@@ -53,7 +54,7 @@ public final class appPreference
                           .apply();
     }
 
-    //是否初次启动，flag == true 初次启动
+    //保存登录状态用的Token
     public static void setAppFlag(String key,boolean flag)
     {
         getAppPreference().edit()
@@ -64,5 +65,30 @@ public final class appPreference
     public static boolean getAppFlag(String key)
     {
         return getAppPreference().getBoolean(key,false);
+    }
+
+    public static void setToken(String token)
+    {
+        getAppPreference().edit()
+                .putString(USER_TOKEN,token)
+                .apply();
+    }
+
+    public static String getToken()
+    {
+        return getAppPreference().getString(USER_TOKEN,"");
+    }
+
+    public static void addCustomAppProfile(String key,String value)
+    {
+        getAppPreference()
+                .edit()
+                .putString(key,value)
+                .apply();
+    }
+
+    public static String getCustomAppProfile(String key)
+    {
+        return getAppPreference().getString(key,"");
     }
 }

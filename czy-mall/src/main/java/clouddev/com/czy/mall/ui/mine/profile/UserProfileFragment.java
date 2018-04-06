@@ -44,14 +44,14 @@ public class UserProfileFragment extends CoreFragment
         ListBean image = new ListBean.Builder()
                 .setItemType(ListItemType.ARROW_ITEM_AVATAR)
                 .setId(1)
-                .setImageUrl("http://i9.qhimg.com/t017d891ca365ef60b5.jpg")
+                .setImageUrl("https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1524477672&di=2c444befdeb8c23ba4390ea3684167fc&src=http://img0.pconline.com.cn/pconline/1501/13/6006483_1.jpg")
                 .build();
 
         ListBean name = new ListBean.Builder()
                 .setItemType(ListItemType.ARROW_ITEM_LAYOUT)
                 .setId(2)
-                .setText("姓名:")
-                .setValue("金正恩")
+                .setText("真实姓名:")
+                .setValue("张三")
                 .build();
 
         ListBean gender = new ListBean.Builder()
@@ -91,7 +91,7 @@ public class UserProfileFragment extends CoreFragment
              ListBean newNameBean =  new ListBean.Builder()
                 .setItemType(ListItemType.ARROW_ITEM_LAYOUT)
                 .setId(2)
-                .setText("姓名:")
+                .setText("真实姓名:")
                 .setValue(name)
                 .build();
              data.set(1,newNameBean);

@@ -21,8 +21,7 @@ public class OrderListClickListener extends SimpleClickListener
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position)
     {
-        FRAGMENT.getSupportDelegate().start(new OrderCommentFragment());
-
+        FRAGMENT.getSupportDelegate().start(OrderCommentFragment.create(position + 1));
     }
 
     @Override

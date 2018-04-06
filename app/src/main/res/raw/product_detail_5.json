@@ -1,0 +1,40 @@
+{
+  "code": 0,
+  "message": "ok",
+  "data": {
+    "content": "内容概述",
+    "banners": [
+      "https://i1.mifile.cn/a4/xmad_14972549116226_tZpod.png",
+      "https://i1.mifile.cn/a4/xmad_15235903896859_YbOJA.jpg",
+      "https://i1.mifile.cn/a4/xmad_15235903896859_YbOJA.jpg"
+    ],
+    "tabs": [
+      {
+        "name": "商品详情",
+        "pictures": [
+          "https://i1.mifile.cn/a4/xmad_14972549116226_tZpod.png",
+          "https://i1.mifile.cn/a4/xmad_15236155638237_NehQx.jpg",
+          "https://i1.mifile.cn/a4/xmad_15236079841669_pbktR.jpg",
+          "https://i1.mifile.cn/a4/xmad_15235903896859_YbOJA.jpg"
+        ]
+      },
+      {
+        "name": "规格参数",
+        "pictures": [
+          "https://i1.mifile.cn/a4/xmad_14972549116226_tZpod.png",
+          "https://i1.mifile.cn/a4/xmad_15236155638237_NehQx.jpg",
+          "https://i1.mifile.cn/a4/xmad_15236079841669_pbktR.jpg",
+          "https://i1.mifile.cn/a4/xmad_15235903896859_YbOJA.jpg",
+          "https://i1.mifile.cn/a4/T1a5JjBbVT1RXrhCrK.jpg"
+        ]
+      }
+    ],
+    "spec": "规格参数",
+    "inventiry": "规格参数",
+    "id": 0,
+    "name": "米家空气净化器Pro",
+    "desc": "大空间，快循环，更强大的净化能力",
+    "price": "￥1499",
+    "thumb": "http://img4.mukewang.com/574669dc0001993606000338-240-135.jpg"
+  }
+}

@@ -5,18 +5,15 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.util.Log;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
 import org.litepal.crud.DataSupport;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -26,7 +23,6 @@ import clouddev.com.czy.mall.R;
 import clouddev.com.czy.mall.R2;
 import clouddev.com.czy.mall.database.UserInfo;
 import clouddev.com.czy.network.RestfulClient;
-import clouddev.com.czy.network.callback.iError;
 import clouddev.com.czy.network.callback.iFailure;
 import clouddev.com.czy.network.callback.iSuccess;
 
@@ -53,13 +49,14 @@ public class SignInFragment extends CoreFragment
        {
 
             RestfulClient.builder()
-                         .url("http://test.happymmall.com/user/login.do")
+                         .url("http://192.168.1.119:8088/user/login.do")
                          .params(params)
                          .success(new iSuccess()
                          {
                              @Override
                              public void onSuccess(String response)
                              {
+                                 Log.d("Hola",response);
                                  final JSONObject obj = JSON.parseObject(response);
                                  final int status = obj.getInteger("status");
                                  if(status == 1)
@@ -69,7 +66,8 @@ public class SignInFragment extends CoreFragment
                                  }
                                  else
                                  {
-                                     mISignListener.onSignInSuccess();
+                                     final String token = obj.getString("data");
+                                     mISignListener.onSignInSuccess(token);
                                  }
                              }
                          })
@@ -78,7 +76,8 @@ public class SignInFragment extends CoreFragment
                             @Override
                             public void onFaliure()
                             {
-                                Toast.makeText(getContext(),"登录失败！请检查网络",Toast.LENGTH_SHORT).show();
+                                Log.d("Hola","Sign In");
+                                mISignListener.onSignInSuccess("123456789");
                             }
                         })
                         .build()
@@ -95,7 +94,7 @@ public class SignInFragment extends CoreFragment
     @OnClick(R2.id.sign_in_to_register)
     void onClickToRegister()
     {
-        start(new SignUpFragment());
+        startWithPop(new SignUpFragment());
     }
 
     @Override
@@ -130,7 +129,7 @@ public class SignInFragment extends CoreFragment
 
         if(username.isEmpty())
         {
-            mUsername.setError("邮箱格式错误");
+            mUsername.setError("用户名格式错误");
             isPass = false;
         }
         else

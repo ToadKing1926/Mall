@@ -4,23 +4,23 @@
   "data":[
     {
       "id":1,
-      "thumb":"http://i9.qhimg.com/t017d891ca365ef60b5.jpg",
-      "title":"标题1",
-      "price":1.00,
+      "thumb":"https://i1.mifile.cn/a4/T1a5JjBbVT1RXrhCrK.jpg",
+      "title":"小米九号平衡车",
+      "price":3499.00,
       "time":"2017-1-1"
     },
     {
       "id":2,
-      "thumb":"http://i9.qhimg.com/t017d891ca365ef60b5.jpg",
-      "title":"标题2",
-      "price":2.00,
+      "thumb":"https://c1.mifile.cn/f/i/16/chain/water1a//water1a-01.jpg",
+      "title":"小米净水器1A",
+      "price":1499.00,
       "time":"2017-1-1"
     },
     {
       "id":3,
-      "thumb":"http://i9.qhimg.com/t017d891ca365ef60b5.jpg",
-      "title":"标题3",
-      "price":1.00,
+      "thumb":"https://i1.mifile.cn/a1/pms_1519959193.42473450!220x220.jpg",
+      "title":"小米电视4A",
+      "price":1399.00,
       "time":"2017-1-1"
     }
   ]

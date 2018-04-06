@@ -1,22 +1,19 @@
 package clouddev.mall;
 
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.util.Log;
 
 import org.litepal.LitePal;
 
 import clouddev.com.czy.activity.FragmentVectorActivity;
 import clouddev.com.czy.app.AccountManager;
-import clouddev.com.czy.app.appInit;
 import clouddev.com.czy.fragment.CoreFragment;
 import clouddev.com.czy.mall.launcher.SplashFragment;
-import clouddev.com.czy.mall.launcher.SplashScrollFragment;
 import clouddev.com.czy.mall.sign.SignInFragment;
-import clouddev.com.czy.mall.sign.SignUpFragment;
 import clouddev.com.czy.mall.sign.iSignListener;
+import clouddev.com.czy.storage.appPreference;
 import clouddev.com.czy.ui.iLauncherListener;
 
 public class MainActivity extends FragmentVectorActivity implements iSignListener,iLauncherListener {
@@ -36,7 +33,6 @@ public class MainActivity extends FragmentVectorActivity implements iSignListene
     @Override
     public CoreFragment setRootFragment()
     {
-
         return new SplashFragment();
     }
 
@@ -45,7 +41,7 @@ public class MainActivity extends FragmentVectorActivity implements iSignListene
     {
         if(isFinish)
         {
-            startWithPop(new ExampleFragment());
+            startWithPop(new MallFragment());
         }
         else
         {
@@ -54,17 +50,19 @@ public class MainActivity extends FragmentVectorActivity implements iSignListene
     }
 
     @Override
-    public void onSignInSuccess()
+    public void onSignInSuccess(String token)
     {
-        Toast.makeText(this,"sign in",Toast.LENGTH_LONG).show();
         AccountManager.setSignState(true);
-        startWithPop(new ExampleFragment());
+        appPreference.setToken(token);
+        startWithPop(new MallFragment());
     }
 
     @Override
-    public void onSignUpSuccess()
+    public void onSignUpSuccess(String token)
     {
         AccountManager.setSignState(true);
-        startWithPop(new ExampleFragment());
+        appPreference.setToken(token);
+        Log.d("Hola","123456");
+        startWithPop(new MallFragment());
     }
 }

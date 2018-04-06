@@ -1,9 +1,9 @@
 package clouddev.com.czy.mall.ui.mine.profile;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.net.Uri;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,7 +12,6 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.SimpleClickListener;
 
 import clouddev.com.czy.GlideApp;
-import clouddev.com.czy.fragment.CoreFragment;
 import clouddev.com.czy.mall.R;
 import clouddev.com.czy.mall.ui.mine.date.DateDialogUtil;
 import clouddev.com.czy.mall.ui.mine.list.ListBean;
@@ -51,8 +50,8 @@ public class UserProfileListener extends SimpleClickListener
                         GlideApp.with(FRAGMENT)
                                 .load(args)
                                 .into(avatar);
-
                         //TODO:上传服务器
+                        Log.d("Hola",args.toString());
                     }
                 });
                 FRAGMENT.startCameraWithCheck();
@@ -97,7 +96,6 @@ public class UserProfileListener extends SimpleClickListener
         final AlertDialog.Builder builder = new AlertDialog.Builder(FRAGMENT.getContext());
         builder.setSingleChoiceItems(mGender,2,listener);
         builder.show();
-
     }
 
     @Override

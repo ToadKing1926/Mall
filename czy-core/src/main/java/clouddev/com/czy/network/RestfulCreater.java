@@ -58,7 +58,7 @@ public class RestfulCreater
             return BUILDER;
         }
 
-        private static final OkHttpClient OKHTTP_CLIENT=addInterceptor().connectTimeout(TIME_OUT, TimeUnit.SECONDS)
+        private static final OkHttpClient OKHTTP_CLIENT = addInterceptor().connectTimeout(TIME_OUT, TimeUnit.SECONDS)
                                                                       .build();
 
     }

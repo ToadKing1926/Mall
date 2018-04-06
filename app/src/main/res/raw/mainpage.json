@@ -8,80 +8,39 @@
       "goodsId":0,
       "spanSize":4,
       "banners":[
-        "http://img4.mukewang.com/574669dc0001993606000338-240-135.jpg",
-        "http://img.mukewang.com/570762760001a1db06000338-240-135.jpg",
-        "http://img2.mukewang.com/5707624d0001423906000338-240-135.jpg"
+        "https://i1.mifile.cn/a4/xmad_15234553192824_sTkYv.jpg",
+        "https://i1.mifile.cn/a4/xmad_15236155638237_NehQx.jpg",
+        "https://i1.mifile.cn/a4/xmad_15236079841669_pbktR.jpg"
       ]
     },
     {
       "goodsId":1,
-      "text":"测试1",
-      "imageUrl":"http://img4.mukewang.com/574669dc0001993606000338-240-135.jpg",
+      "text":"小米笔记本",
+      "imageUrl":"https://i1.mifile.cn/a4/xmad_15235903896859_YbOJA.jpg",
       "spanSize":4
     },
     {
       "goodsId":2,
-      "text":"测试2",
-      "imageUrl":"http://img.mukewang.com/570762760001a1db06000338-240-135.jpg",
+      "text":"小米平衡车",
+      "imageUrl":"https://i1.mifile.cn/a4/T1a5JjBbVT1RXrhCrK.jpg",
       "spanSize":2
     },
     {
       "goodsId":3,
-      "text":"测试3",
-      "imageUrl":"http://img2.mukewang.com/5707624d0001423906000338-240-135.jpg",
+      "text":"小米净水器",
+      "imageUrl":"https://i1.mifile.cn/a4/xmad_15041689984823_YclCV.jpg",
       "spanSize":2
     },
     {
       "goodsId":4,
-      "imageUrl":"http://img2.mukewang.com/5707624d0001423906000338-240-135.jpg",
+      "imageUrl":"https://i1.mifile.cn/a1/pms_1519959193.42473450!220x220.jpg",
       "spanSize":4
     },
     {
       "goodsId":5,
-      "text":"测试5",
-      "imageUrl":"http://img.mukewang.com/570762760001a1db06000338-240-135.jpg",
-      "spanSize":2
-    },
-    {
-      "goodsId":6,
-      "text":"测试6",
-      "imageUrl":"http://img4.mukewang.com/574669dc0001993606000338-240-135.jpg",
-      "spanSize":2
-    }
-    {
-      "goodsId":7,
-      "text":"测试7",
-      "imageUrl":"http://img4.mukewang.com/574669dc0001993606000338-240-135.jpg",
+      "text":"小米空气净化器",
+      "imageUrl":"https://i1.mifile.cn/a4/xmad_14972549116226_tZpod.png",
       "spanSize":4
-    },
-    {
-      "goodsId":8,
-      "text":"测试8",
-      "imageUrl":"http://img.mukewang.com/570762760001a1db06000338-240-135.jpg",
-      "spanSize":2
-    },
-    {
-      "goodsId":9,
-      "text":"测试9",
-      "imageUrl":"http://img2.mukewang.com/5707624d0001423906000338-240-135.jpg",
-      "spanSize":2
-    },
-    {
-      "goodsId":10,
-      "imageUrl":"http://img2.mukewang.com/5707624d0001423906000338-240-135.jpg",
-      "spanSize":4
-    },
-    {
-      "goodsId":11,
-      "text":"测试11",
-      "imageUrl":"http://img.mukewang.com/570762760001a1db06000338-240-135.jpg",
-      "spanSize":2
-    },
-    {
-      "goodsId":12,
-      "text":"测试12",
-      "imageUrl":"http://img4.mukewang.com/574669dc0001993606000338-240-135.jpg",
-      "spanSize":2
     }
   ]
 

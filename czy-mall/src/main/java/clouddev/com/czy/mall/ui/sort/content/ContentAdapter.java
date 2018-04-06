@@ -30,8 +30,6 @@ public class ContentAdapter extends BaseSectionQuickAdapter<SortContentBean,Base
     protected void convertHead(BaseViewHolder helper, SortContentBean item)
     {
         helper.setText(R.id.header,item.header);
-        helper.setVisible(R.id.load_more,item.isMore());
-        helper.addOnClickListener(R.id.load_more);
     }
 
     @Override

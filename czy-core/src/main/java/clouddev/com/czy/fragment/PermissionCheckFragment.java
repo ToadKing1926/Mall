@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.widget.Toast;
 
@@ -13,9 +14,11 @@ import com.yalantis.ucrop.UCrop;
 import clouddev.com.czy.camera.CameraImageBean;
 import clouddev.com.czy.camera.RequestCode;
 import clouddev.com.czy.camera.czyCamera;
+import clouddev.com.czy.ui.scanner.ScannerFragment;
 import clouddev.com.czy.util.callback.CallBackManager;
 import clouddev.com.czy.util.callback.CallBackType;
 import clouddev.com.czy.util.callback.iGlobalCallback;
+import me.dm7.barcodescanner.zbar.ZBarScannerView;
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.OnPermissionDenied;
 import permissions.dispatcher.OnShowRationale;
@@ -35,10 +38,10 @@ public abstract class PermissionCheckFragment extends BaseFragment
         czyCamera.start(this);
     }
 
-    public void startCameraWithCheck()
+    @NeedsPermission(Manifest.permission.CAMERA)
+    void startScan(BaseFragment fragment)
     {
-        PermissionCheckFragmentPermissionsDispatcher.startCameraWithPermissionCheck(this);
-        PermissionCheckFragmentPermissionsDispatcher.applyForStorageWithPermissionCheck(this);
+        fragment.getSupportDelegate().startForResult(new ScannerFragment(),RequestCode.SCAN);
     }
 
     @NeedsPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -46,7 +49,6 @@ public abstract class PermissionCheckFragment extends BaseFragment
     {
 
     }
-
 
     @OnPermissionDenied(Manifest.permission.CAMERA)
     void onCameraDenied()
@@ -81,6 +83,17 @@ public abstract class PermissionCheckFragment extends BaseFragment
                         })
                         .setTitle("权限")
                         .show();
+    }
+
+    public void startCameraWithCheck()
+    {
+        PermissionCheckFragmentPermissionsDispatcher.startCameraWithPermissionCheck(this);
+        PermissionCheckFragmentPermissionsDispatcher.applyForStorageWithPermissionCheck(this);
+    }
+
+    public void startScanWithCheck(BaseFragment fragment)
+    {
+        PermissionCheckFragmentPermissionsDispatcher.startScanWithPermissionCheck(this,fragment);
     }
 
     @Override
@@ -120,9 +133,14 @@ public abstract class PermissionCheckFragment extends BaseFragment
                     final iGlobalCallback<Uri> callback = CallBackManager
                                                            .getInstance()
                                                            .getCallback(CallBackType.ON_CROP);
-                    if(callback != null)
+                    final iGlobalCallback<Uri> mineCallback = CallBackManager
+                                                          .getInstance()
+                                                          .getCallback(CallBackType.ON_CHANGE_AVATAR);
+
+                    if(callback != null && mineCallback != null)
                     {
                         callback.executeCallback(cropUri);
+                        mineCallback.executeCallback(cropUri);
                     }
                     break;
                 case RequestCode.CROP_PHOTO_ERROR:

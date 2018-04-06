@@ -11,8 +11,6 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import clouddev.com.czy.app.appInit;
 import clouddev.com.czy.network.RestfulClient;
-import clouddev.com.czy.network.callback.iError;
-import clouddev.com.czy.network.callback.iFailure;
 import clouddev.com.czy.network.callback.iSuccess;
 import clouddev.com.czy.ui.recycler.DataConverter;
 import clouddev.com.czy.ui.recycler.MultipleRecyclerViewAdapter;
@@ -74,7 +72,7 @@ public class RefreshHandler implements SwipeRefreshLayout.OnRefreshListener,Base
                          @Override
                          public void onSuccess(String response)
                          {
-                             final JSONObject object = JSON.parseObject(response);
+                             JSONObject object = JSON.parseObject(response);
                              pageBean.setTotal(object.getInteger("total"))
                                        .setPageSize (object.getInteger("page_size"));
                              multipleRecyclerViewAdapter = MultipleRecyclerViewAdapter.create(dataConverter.setJsonData(response));
@@ -87,9 +85,48 @@ public class RefreshHandler implements SwipeRefreshLayout.OnRefreshListener,Base
                      .get();
     }
 
+    private void paging(final String url)
+    {
+        final int pageSize = pageBean.getPageSize();
+        final int curCount = pageBean.getCurCount();
+        final int total = pageBean.getTotal();
+        final int index = pageBean.getPageIndex();
+
+        if(multipleRecyclerViewAdapter.getData().size() < pageSize || curCount >= total)
+        {
+            multipleRecyclerViewAdapter.loadMoreEnd(true);
+        }
+        else
+        {
+            appInit.getHandler().postDelayed(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    RestfulClient.builder()
+                            .url(url)
+                            .params("","")
+                            .success(new iSuccess()
+                            {
+                                @Override
+                                public void onSuccess(String response)
+                                {
+                                    multipleRecyclerViewAdapter.addData(dataConverter.setJsonData(response).convert());
+                                    pageBean.setCurCount(multipleRecyclerViewAdapter.getData().size());
+                                    multipleRecyclerViewAdapter.loadMoreComplete();
+                                    pageBean.addIndex();
+                                }
+                            })
+                            .build()
+                            .get();
+                }
+            },2000);
+        }
+    }
+
     @Override
     public void onLoadMoreRequested()
     {
-
+       //paging("/index");
     }
 }

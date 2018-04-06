@@ -12,5 +12,5 @@ public class ItemType
     public static final int IMAGE_TEXT = 3;//图文并茂
     public static final int BANNER = 4;//广告轮播
     public static final int SORT_MENU = 5;//分类菜单
-
+    public static final int BIG_SINGLE_IMAGE = 6;
 }

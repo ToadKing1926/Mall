@@ -50,20 +50,24 @@
             android:layout_toRightOf="@id/order_comment_avatar"
             android:text="@string/rate"
             android:textColor="#323232"/>
-        <clouddev.com.czy.ui.widget.StarLayout
-            android:id="@+id/star_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_toRightOf="@id/order_comment_title"
-            android:layout_below="@id/order_comment_title"/>
-        <clouddev.com.czy.ui.widget.AutoImageLayout
-            android:id="@+id/auto_image"
+
+        <RatingBar
+            android:id="@+id/order_comment_rating"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:icon_size="10sp"
-            app:item_margin="3"
-            app:line_count="5"
-            app:max_count="5"
-            />
+            android:layout_height="match_parent"
+            android:layout_below="@+id/order_comment_title"
+            android:layout_toRightOf="@id/order_comment_avatar"
+            android:numStars="5"
+            android:stepSize="1" />
+
     </RelativeLayout>
+    <EditText
+        android:id="@+id/order_comment_desc"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@android:color/white"
+        android:gravity="top|left"
+        android:hint="@string/rate"
+        android:padding="10dp" />
+
 </LinearLayout>

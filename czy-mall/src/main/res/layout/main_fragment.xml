@@ -53,14 +53,14 @@
                 android:paddingLeft="20dp"/>
 
             <com.joanzapata.iconify.widget.IconTextView
-                android:id="@+id/icon_message"
+                android:id="@+id/icon_random"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_gravity="right"
                 android:gravity="center"
                 android:paddingLeft="10dp"
-                android:text="{icon-alipay}"
+                android:text="{fa-random}"
                 android:textColor="@android:color/black"
                 android:textSize="25sp"/>
 

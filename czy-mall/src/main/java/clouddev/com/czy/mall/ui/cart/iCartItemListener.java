@@ -7,5 +7,4 @@ package clouddev.com.czy.mall.ui.cart;
 public interface iCartItemListener
 {
     void onItemClick(double itemTotalPrice);
-
 }
